@@ -44,7 +44,6 @@
                             <a class="nav-link" href="homepage.html">Home</a>
                             <a class="nav-link" href="Recipies.html">Recipes</a>
                             <a class="nav-link" href="">About Me</a>
-                            <a class="nav-link" href="">Search</a>
                             <a class="nav-link" href="">Favorites</a>
                         </div>
                     </div>
@@ -54,11 +53,30 @@
     </header>
     <div class="container">
         <div class="row">
-            <h2>Welcome!</h2>
-            <p>
-                Welcome to [] recipes! Here you can find recipes for all your cooking needs.
-                I hope you enjoy all the deliciousness available!
-            </p>
+            <div class="col-6">
+                <h2>Welcome!</h2>
+                <p>
+                    Welcome to [] recipes! Here you can find recipes for all your cooking needs.
+                    I hope you enjoy all the deliciousness available!
+                </p>
+            </div>
+            <div class="col-6">
+                <h2>Recipe of the Day</h2>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="rice">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Rice</h5>
+                                <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
+                                <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row bg-body-tertiary my-2" style="height: 50px;">
@@ -67,8 +85,8 @@
         <!--recipe cards here-->
         <div class="row py-10">
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <img src="pineapple.png" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;" alt="pineapple">
                     <div class="card-body">
                         <h5 class="card-title">Food</h5>
                         <p class="card-text">What the food is and why it is detremental</p>
@@ -77,8 +95,8 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <img src="pineapple.png" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;" alt="pineapple">
                     <div class="card-body">
                         <h5 class="card-title">Food</h5>
                         <p class="card-text">What the food is and why it is detremental</p>
@@ -87,8 +105,8 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <img src="pineapple.png" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;" alt="pineapple">
                     <div class="card-body">
                         <h5 class="card-title">Food</h5>
                         <p class="card-text">What the food is and why it is detremental</p>
@@ -104,7 +122,8 @@
 
         <div class="row text-center">
             <h2>Submit your own recipe!</h2>
-            <btn>Go to submission form --></btn>
+            <button type="button" class="btn btn-primary">Go to submission form --></button>
+            
         </div>
     </div>
     <footer>
