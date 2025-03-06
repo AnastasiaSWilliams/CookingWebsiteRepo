@@ -18,3 +18,48 @@
 .bg-light { background-color: var(--bs-light) !important; }
 .link-success { color: var(--bs-success) !important; }
     */
+
+    .search-bar
+    {
+        width: 100%;
+        max-width: 700;
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: left;
+        border-radius: 60px;
+        padding: 10px 20px;
+        /*backdrop-filter: blur(4px) saturate(180%);*/
+    }
+
+    .search-bar input
+    {
+        /*background: transparent;*/
+        flex: 1;
+        border: 1;
+        outline: rgb(0, 0, 0);
+        padding: 24px 20px;
+        font-size: 20px;
+        color: #000000
+    }
+
+    .user-cards
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fill);
+    }
+
+    .card > .header
+    {
+        margin-bottom: .25rem;
+    }
+
+    .card > .body 
+    {
+        font-size: .8rem;
+        color: #777;
+    }
+
+    .hide 
+    {
+        display: none;
+    }
