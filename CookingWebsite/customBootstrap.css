@@ -1,6 +1,6 @@
 :root {
-    --bs-primary: #6664827;
-    --bs-secondary: #dca01a;
+    --bs-primary: #dca01a;
+    --bs-secondary: #f7d9ab;
     --bs-dark: rgb(70, 43, 22);
     --bs-light: #f7d9ab;
     --bs-success: #064561;
@@ -8,6 +8,10 @@
 
 
 .bg-primary { background-color: var(--bs-primary) !important; }
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    --bs-btn-border-color: var(--bs-primary) !important;
+}
 .bg-secondary { background-color: var(--bs-secondary) !important; }
 /*
 .bg-dark { background-color: var(--bs-dark) !important; }
