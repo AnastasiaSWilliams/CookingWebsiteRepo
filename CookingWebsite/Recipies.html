@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="recipies.CSS" rel="stylesheet" />
     <link href="bootstrap.min.css" rel="stylesheet" />
-    <script defer src="scripts.js"></script>
+    <!-- <script defer src="search_bar.js"></script> -->
+    <script defer src="check_filter.js"></script>
 
     <title>Recipes</title>
 </head>
 
 <body>
+
+
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -21,7 +25,7 @@
             <div class="col">
                 <form action="Recipies.html" method="get" class="search-bar">
                     <input type="text" id="search-input" placeholder="Search for recipes" name="query">
-                    <button type="submit" href="">Search</button>
+                    <button type="submit">Search</button>
                 </form>
             </div><!--
             <div class="col">
@@ -62,6 +66,14 @@
 
     <div class="sidenav">
         <p>filtering and Stuff
+            <!-- Category checkboxes -->
+            <div>
+                <input type="checkbox" class="category-filter" id="category-1" value="Food"> Food
+                <br>
+                <input type="checkbox" class="category-filter" id="category-2" value="Rice"> Rice
+                <br>
+                <input type="checkbox" class="category-filter" id="category-3" value="Other"> Other
+            </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p>Advanced Search
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -70,42 +82,41 @@
     </div>
 
     <br>
-    <div class="mainNav">
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
-                    <div class="card-body">
-                        <h5 class="card-title">Food</h5>
-                        <p class="card-text">What the food is and why it is detremental</p>
-                        <a href="genericFood.html" class="btn btn-primary">Food</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
-                    <div class="card-body">
-                        <h5 class="card-title">Food</h5>
-                        <p class="card-text">What the food is and why it is detremental</p>
-                        <a href="genericFood.html" class="btn btn-primary">Food</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="pineapple.png" class="card-img-top" alt="pineapple">
-                    <div class="card-body">
-                        <h5 class="card-title">Food</h5>
-                        <p class="card-text">What the food is and why it is detremental</p>
-                        <a href="genericFood.html" class="btn btn-primary">Food</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Cards -->
+<div class="mainNav">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;" categories="Food">
+          <img src="pineapple.png" class="card-img-top" alt="pineapple">
+          <div class="card-body">
+            <h5 class="card-title">Food</h5>
+            <p class="card-text">What the food is and why it is detrimental</p>
+            <a href="genericFood.html" class="btn btn-primary">Food</a>
+          </div>
         </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;" categories="Rice">
+          <img src="pineapple.png" class="card-img-top" alt="pineapple">
+          <div class="card-body">
+            <h5 class="card-title">Rice</h5>
+            <p class="card-text">What rice is and why it is beneficial</p>
+            <a href="genericRice.html" class="btn btn-primary">Rice</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;" categories="Other">
+          <img src="pineapple.png" class="card-img-top" alt="pineapple">
+          <div class="card-body">
+            <h5 class="card-title">Other</h5>
+            <p class="card-text">What the food is and why it is unique</p>
+            <a href="genericOther.html" class="btn btn-primary">Other</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-
+</div>
 
 </body>
 
