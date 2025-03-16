@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Recipes</h1>
+                <h1>Favorates</h1>
 
             </div>
             <!--
@@ -93,40 +93,8 @@
         <br>
         <!-- Cards -->
         <div class="mainNav">
-            <div class="row">
-                <div class="col">
-                    <div class="card" id="card1" style="width: 18rem;" categories="Standard, Hard">
-                        <img src="pierogi.jpg" class="card-img-top" alt="pierogi">
-                        <div class="card-body">
-                            <h5 class="card-title">Pierogi</h5>
-                            <p class="card-text">Learn how to make this delicious Polish food.</p>
-                            <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card1')">Add to Favorites</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="card2" style="width: 18rem;" categories="Short, Easy">
-                        <img src="rice.jpg" class="card-img-top mx-auto mt-1"  style="width: 14rem; height: 14rem;" alt="rice">
-                        <div class="card-body">
-                            <h5 class="card-title">Rice</h5>
-                            <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
-                            <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card2')">Add to Favorites</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="card3" style="width: 18rem;" categories="Short, Medium">
-                        <img src="pineapple.png" class="card-img-top" alt="pineapple">
-                        <div class="card-body">
-                            <h5 class="card-title">Other</h5>
-                            <p class="card-text">What the food is and why it is unique</p>
-                            <a href="genericOther.html" class="btn btn-primary">Other</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card3')">Add to Favorites</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="favorites-container">
+                <!-- Favorite cards will appear here -->
             </div>
         </div>
 
