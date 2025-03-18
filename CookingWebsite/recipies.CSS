@@ -14,3 +14,18 @@
     font-size: 28px;
     padding: 0px 10px;
 }
+
+/* Added cuz Chat suggested */
+
+/* Flexbox layout for cards */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1 1 calc(33.333% - 20px); /* Responsive grid for 3 columns */
+    margin-bottom: 20px;
+    transition: all 0.3s ease;  /* Smooth transition when card is shown or hidden */
+  }
