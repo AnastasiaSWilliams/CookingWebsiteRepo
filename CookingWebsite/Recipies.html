@@ -7,9 +7,8 @@
     <link href="recipies.CSS" rel="stylesheet" />
     <link href="bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="customBootstrap.css">
-    <script defer src="search_bar.js"></script>
-    <script defer src="favors.js"></script>
-    <!-- <script defer src="check_filter.js"></script> -->
+    <!-- <script defer src="search_bar.js"></script> -->
+    <script defer src="check_filter.js"></script>
 
     <title>Recipes</title>
 </head>
@@ -67,26 +66,15 @@
         <div class="sidenav">
             <h6 class="ms-1">Advanced Search</h6>
             <p>
-                <h6>Length</h6>
                 <!-- Category checkboxes -->
                 <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Short"> Short 5 min - 10 min
+                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Food"> Food
                     <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Standard"> Standard 15 min - 25 min
+                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Rice"> Rice
                     <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Long"> Long 30 min - 1 hour
+                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Other"> Other
                 </div>
-                <br>
-                <h6>Difficulty</h6>
-                <!-- Category checkboxes -->
-                <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Easy"> Easy
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Medium"> Medium
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Hard"> Hard
-                </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </p>
         </div>
 
@@ -95,35 +83,32 @@
         <div class="mainNav">
             <div class="row">
                 <div class="col">
-                    <div class="card" id="card1" style="width: 18rem;" categories="Standard, Hard">
+                    <div class="card" style="width: 18rem;" categories="Food">
                         <img src="pierogi.jpg" class="card-img-top" alt="pierogi">
                         <div class="card-body">
                             <h5 class="card-title">Pierogi</h5>
                             <p class="card-text">Learn how to make this delicious Polish food.</p>
                             <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card1')">Add to Favorites</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" id="card2" style="width: 18rem;" categories="Short, Easy">
+                    <div class="card" style="width: 18rem;" categories="Rice">
                         <img src="rice.jpg" class="card-img-top mx-auto mt-1"  style="width: 14rem; height: 14rem;" alt="rice">
                         <div class="card-body">
                             <h5 class="card-title">Rice</h5>
                             <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
                             <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card2')">Add to Favorites</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card" id="card3" style="width: 18rem;" categories="Short, Medium">
+                    <div class="card" style="width: 18rem;" categories="Other">
                         <img src="pineapple.png" class="card-img-top" alt="pineapple">
                         <div class="card-body">
                             <h5 class="card-title">Other</h5>
                             <p class="card-text">What the food is and why it is unique</p>
                             <a href="genericOther.html" class="btn btn-primary">Other</a>
-                            <button class="btn btn-primary" onclick="addToFavorites('card3')">Add to Favorites</button>
                         </div>
                     </div>
                 </div>
