@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="recipies.CSS" rel="stylesheet" />
-    <link href="bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="customBootstrap.css">
-    <script defer src="search_bar.js"></script>
-    <script defer src="favors.js"></script>
+
+    <!--Styles Imported-->
+    <link href="styles/recipies.CSS" rel="stylesheet" />
+    <link href="styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/customBootstrap.css">
+
+    <!--Scripts Imported-->
+    <script defer src="scripts/search_bar.js"></script>
+    <script defer src="scripts/favors.js"></script>
     <!-- <script defer src="check_filter.js"></script> -->
 
     <title>Recipes</title>
@@ -19,7 +23,13 @@
         <div class="row">
             <div class="col">
                 <h1>Favorates</h1>
-
+            </div>
+            <!--Search Bar-->
+            <div class="col">
+                <form action="Recipies.html" method="get" class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for recipes" name="query">
+                    <button type="submit">Search</button>
+                </form>
             </div>
             <!--
         <div class="col">
@@ -55,13 +65,6 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        <!--Search Bar-->
-        <div class="col-8 mx-auto">
-            <form action="Recipies.html" method="get" class="search-bar">
-                <input type="text" id="search-input" placeholder="Search for recipes" name="query">
-                <button type="submit">Search</button>
-            </form>
         </div>
 
         <div class="sidenav">
