@@ -13,7 +13,6 @@
     <!--Scripts Imported-->
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
-    <!-- <script defer src="check_filter.js"></script> -->
 
     <title>Recipes</title>
 </head>
@@ -106,3 +105,58 @@
 </body>
 
 </html>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const selectedCategories = new Set(); // For storing selected categories
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const favoritesContainer = document.getElementById('favorites-container');
+
+    // Filter favorites based on selected categories
+    function filterFavorites() {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  // Get selected categories from the filter
+  const selectedCategories = new Set();
+  document.querySelectorAll('.category-filter:checked').forEach(filter => {
+    selectedCategories.add(filter.value);
+  });
+
+  // Loop through all favorites and display or hide based on category matching
+  favorites.forEach(favorite => {
+    const cardCategories = favorite.categories ? favorite.categories.split(',') : [];
+    
+    // Check if any category matches the selected categories
+    const matchesCategory = selectedCategories.size === 0 || cardCategories.some(category => selectedCategories.has(category.trim()));
+
+    // Find the card element for this favorite and show/hide based on category filter
+    const cardElement = document.getElementById(favorite.id);
+    if (cardElement) {
+      if (matchesCategory) {
+        cardElement.style.display = '';  // Show card
+      } else {
+        cardElement.style.display = 'none';  // Hide card
+      }
+    }
+  });
+}
+
+    // Event listener for category filters (check/uncheck category boxes)
+    categoryFilters.forEach(filter => {
+        filter.addEventListener('change', function () {
+            // Update selected categories based on checked boxes
+            if (this.checked) {
+                selectedCategories.add(this.value); // Add selected category
+            } else {
+                selectedCategories.delete(this.value); // Remove unselected category
+            }
+            filterFavorites(); // Apply the new category filter immediately
+        });
+    });
+
+    // Initial filtering when the page is loaded
+    filterFavorites();
+});
+
+</script>

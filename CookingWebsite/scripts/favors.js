@@ -1,34 +1,33 @@
-// This function will clone a card to a destinate aka the favorite page
-function addToFavorites(cardId) {
-    // Get the card details dynamically using its ID
-    const card = document.getElementById(cardId);
-    const cardTitle = card.querySelector('.card-title').innerText;
-    const cardImage = card.querySelector('.card-img-top').src;
-    const recipeLink = card.querySelector('a').href;  // Get the "Go to Recipe" link
+// This function is used to display the filtered cards on the favorites page
+function filterFavorites() {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const selectedCategories = new Set();
 
-    // Check if the card is already in favorites
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const existingCard = favorites.find(fav => fav.id === cardId);
+    // Get all checked checkboxes (category filters)
+    document.querySelectorAll('.category-filter:checked').forEach(filter => {
+        selectedCategories.add(filter.value);
+    });
 
-    if (!existingCard) {
-        // If the card is not in the favorites, add it
-        favorites.push({
-            id: cardId,
-            title: cardTitle,
-            image: cardImage,
-            link: recipeLink  // Store the link as well
-        });
+    // Loop through all favorites and display or hide based on category matching
+    favorites.forEach(favorite => {
+        const cardCategories = favorite.categories ? favorite.categories.split(',') : [];
+        
+        // Check if any category matches the selected categories
+        const matchesCategory = selectedCategories.size === 0 || cardCategories.some(category => selectedCategories.has(category.trim()));
 
-        // Save the updated favorites back to localStorage
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-
-        alert(`${cardTitle} added to favorites!`);
-    } else {
-        alert(`${cardTitle} is already in your favorites.`);
-    }
+        // Find the card element for this favorite and show/hide based on category filter
+        const cardElement = document.getElementById(favorite.id);
+        if (cardElement) {
+            if (matchesCategory) {
+                cardElement.style.display = '';  // Show card
+            } else {
+                cardElement.style.display = 'none';  // Hide card
+            }
+        }
+    });
 }
 
-// This function is then used to display the cards favorated
+// Function to load the favorites from localStorage and render them on the page
 function showFavorites() {
     const favoritesContainer = document.getElementById('favorites-container');
     favoritesContainer.innerHTML = '';  // Clear the favorites container
@@ -44,6 +43,7 @@ function showFavorites() {
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
         cardDiv.style.width = '18rem';
+        cardDiv.id = favorite.id; // Set the card's ID
 
         // Dynamically build the card content (without the "Add to Favorites" button)
         cardDiv.innerHTML = `
@@ -58,13 +58,19 @@ function showFavorites() {
             </div>
         `;
 
+        // Add the categories to the card element as a data attribute
+        cardDiv.setAttribute('categories', favorite.categories);
+
         // Append the card to the row
         rowDiv.appendChild(cardDiv);
         favoritesContainer.appendChild(rowDiv);
     });
+
+    // After rendering, apply the category filters
+    filterFavorites();
 }
 
-// Self Explainatory, murder...I mean removes a card from the favorites
+// Function to remove a card from favorites
 function removeFromFavorites(cardId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     
@@ -77,6 +83,45 @@ function removeFromFavorites(cardId) {
     // Re-render the favorites page
     showFavorites();
 }
+
+// This function will clone a card to the favorites page
+function addToFavorites(cardId) {
+    // Get the card details dynamically using its ID
+    const card = document.getElementById(cardId);
+    const cardTitle = card.querySelector('.card-title').innerText;
+    const cardImage = card.querySelector('.card-img-top').src;
+    const recipeLink = card.querySelector('a').href;  // Get the "Go to Recipe" link
+    const cardCategories = card.getAttribute('categories'); // Get the categories from the card
+
+    // Check if the card is already in favorites
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const existingCard = favorites.find(fav => fav.id === cardId);
+
+    if (!existingCard) {
+        // If the card is not in the favorites, add it
+        favorites.push({
+            id: cardId,
+            title: cardTitle,
+            image: cardImage,
+            link: recipeLink,  // Store the link as well
+            categories: cardCategories  // Store the categories as well
+        });
+
+        // Save the updated favorites back to localStorage
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+
+        alert(`${cardTitle} added to favorites!`);
+    } else {
+        alert(`${cardTitle} is already in your favorites.`);
+    }
+}
+
+// Event listener to apply the filter when a category checkbox is checked/unchecked
+document.querySelectorAll('.category-filter').forEach(filter => {
+    filter.addEventListener('change', function() {
+        filterFavorites();  // Trigger the filtering logic
+    });
+});
 
 // Show favorites automatically on page load
 window.onload = function() {
