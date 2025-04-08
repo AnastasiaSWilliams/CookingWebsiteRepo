@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Styles Importing-->
+    <!--Styles Imported-->
     <link href="styles/recipies.CSS" rel="stylesheet" />
     <link href="styles/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/customBootstrap.css">
+    <link href="styles/customBootstrap.css" rel="stylesheet">
 
-    <!--Scripts Importing-->
+    <!--Scripts Imported-->
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
 
@@ -84,20 +84,18 @@
                 <div>
                     <input type="checkbox" class="category-filter ms-1" id="category-1" value="Easy"> Easy
                     <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Medium"> Medium
+                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Moderate"> Moderate
                     <br>
                     <input type="checkbox" class="category-filter ms-1" id="category-3" value="Hard"> Hard
                 </div>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br>
             </p>
         </div>
-
-        <br>
-         <!-- Cards -->
+        
+        <!-- Cards Section -->
         <div class="mainNav">
-            <div class="row">
-                <div class="col">
-                    <div class="card" id="card1" style="width: 18rem;" categories="Standard, Hard">
+            <div class="card-container">
+                    <div class="card" id="card1" categories="Standard, Hard">
                         <img src="images/pierogi.jpg" class="card-img-top" alt="pierogi">
                         <div class="card-body">
                             <h5 class="card-title">Pierogi</h5>
@@ -106,10 +104,9 @@
                             <button class="btn btn-primary" onclick="addToFavorites('card1')">Add to Favorites</button>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="card2" style="width: 18rem;" categories="Short, Easy">
-                        <img src="images/rice.jpg" class="card-img-top mx-auto mt-1"  style="width: 14rem; height: 14rem;" alt="rice">
+                
+                    <div class="card" id="card2" categories="Short, Easy">
+                        <img src="images/rice.jpg" class="card-img-top" alt="rice">
                         <div class="card-body">
                             <h5 class="card-title">Rice</h5>
                             <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
@@ -117,9 +114,8 @@
                             <button class="btn btn-primary" onclick="addToFavorites('card2')">Add to Favorites</button>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" id="card3" style="width: 18rem;" categories="Short, Medium">
+                
+                    <div class="card" id="card3" categories="Short, Moderate">
                         <img src="images/pineapple.png" class="card-img-top" alt="pineapple">
                         <div class="card-body">
                             <h5 class="card-title">Other</h5>
@@ -128,9 +124,6 @@
                             <button class="btn btn-primary" onclick="addToFavorites('card3')">Add to Favorites</button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
 </body>
 

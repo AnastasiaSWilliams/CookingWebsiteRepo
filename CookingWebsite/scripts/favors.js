@@ -35,35 +35,21 @@ function showFavorites() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     favorites.forEach(favorite => {
-        // Create a new row for each favorite card
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('col-12', 'mb-4'); // Ensures it's one card per row with margin
-
         // Create a card div for the favorite
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
-        cardDiv.style.width = '18rem';
         cardDiv.id = favorite.id; // Set the card's ID
-
-        // Dynamically build the card content (without the "Add to Favorites" button)
         cardDiv.innerHTML = `
             <img src="${favorite.image}" class="card-img-top" alt="${favorite.title}">
             <div class="card-body">
                 <h5 class="card-title">${favorite.title}</h5>
                 <p class="card-text">This is one of your favorite recipes.</p>
-                <!-- Include the "Go to Recipe" button -->
                 <a href="${favorite.link}" class="btn btn-primary">Go to Recipe</a>
-                <!-- Add a remove button to each card -->
                 <button class="btn btn-danger" onclick="removeFromFavorites('${favorite.id}')">Remove from Favorites</button>
             </div>
         `;
-
-        // Add the categories to the card element as a data attribute
         cardDiv.setAttribute('categories', favorite.categories);
-
-        // Append the card to the row
-        rowDiv.appendChild(cardDiv);
-        favoritesContainer.appendChild(rowDiv);
+        favoritesContainer.appendChild(cardDiv);
     });
 
     // After rendering, apply the category filters

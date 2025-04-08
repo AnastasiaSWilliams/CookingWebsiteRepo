@@ -12,5 +12,49 @@
 .mainNav {
     margin-left: 140px;
     font-size: 28px;
-    padding: 0px 10px;
+    padding: 20px 10px;
+}
+
+/* In Recipes.css */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-items: center; /* Center cards */
+}
+
+/* Make sure cards are styled correctly */
+.card {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Add this rule to override any flex behavior */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-adjust columns based on screen size */
+    gap: 1rem;
+    justify-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* When cards are hidden, they are removed from the grid layout */
+.card.hidden {
+    display: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    }
 }
