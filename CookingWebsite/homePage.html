@@ -99,48 +99,53 @@
             <!--spacing row, cream color-->
         </div>
         <!--recipe cards here-->
-        <div class="row py-10">
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/pierogi.jpg" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;" alt="pierogi">
-                    <div class="card-body">
-                        <h5 class="card-title">Pierogi</h5>
-                        <p class="card-text">Learn how to make this delicious Polish food.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/rice.jpg" class="card-img-top mx-auto mt-1" style="width: 10rem; height: 14rem;" alt="rice">
-                    <div class="card-body">
-                        <h5 class="card-title">Rice</h5>
-                        <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/pineapple.png" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;" alt="pineapple">
-                    <div class="card-body">
-                        <h5 class="card-title">Food</h5>
-                        <p class="card-text">What the food is and why it is detremental.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Food</a>
-                    </div>
-                </div>
+<div class="row py-10">
+    <div class="col">
+        <div categories="All, American, Standard, Hard, Summer" class="card" id="card1">
+            <img alt="pierogi" class="card-img-top" src="images/pierogi.jpg"/>
+            <div class="card-body">
+                <h5 class="card-title">Pierogi</h5>
+                <p class="card-text">Learn how to make this delicious Polish food.</p>
+                <a class="btn btn-primary" href="genericFood.html">Go to Recipe</a>
             </div>
         </div>
+    </div>
+    <div class="col">
+        <div categories="All, Indian, Short, Easy, Autumn" class="card" id="card2">
+            <img alt="rice" class="card-img-top" src="images/rice.jpg"/>
+            <div class="card-body">
+                <h5 class="card-title">Rice</h5>
+                <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
+                <a class="btn btn-primary" href="genericFood.html">Go to Recipe</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div categories="All, British, Long, Moderate, Winter" class="card" id="card3">
+            <img alt="pineapple" class="card-img-top" src="images/pineapple.png"/>
+            <div class="card-body">
+                <h5 class="card-title">Other</h5>
+                <p class="card-text">What the food is and why it is unique</p>
+                <a class="btn btn-primary" href="genericOther.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <div class="row bg-secondary my-2" style="height: 50px;">
-            <!--spacing row-->
-        </div>
 
-        <div class="row text-center">
-            <h2>Submit your own recipe!</h2>
-            <a href="recipeSubmissionForm.html" type="button" class="btn btn-primary">Go to submission form</a>
+    <!--Seasonal Section-->
+    <div class="row bg-secondary my-2" style="height: 50px;">
+        <h2>Seasonal Picks</h2>
+        <div id="seasonal-container" class="card-container">
+            <!--Seasonal Stuff go here!-->
         </div>
-        <br />
+    </div>
+
+    <div class="row text-center">
+        <h2>Submit your own recipe!</h2>
+        <a class="btn btn-primary" href="recipeSubmissionForm.html" type="button">Go to submission form</a>
+    </div>
+    <br/>
     </div>
     <footer>
         <!--seems like we should have one of these, not sure what exactly should be in it-->
