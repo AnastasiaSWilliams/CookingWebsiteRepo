@@ -1,3 +1,75 @@
+function getCurrentSeason() {
+  const month = new Date().getMonth();
+  if (month >= 2 && month <= 4) return "Spring";
+  if (month >= 5 && month <= 7) return "Summer";
+  if (month >= 8 && month <= 10) return "Autumn";
+  return "Winter";
+}
+
+function showSeasonalPicks() {
+  const season = getCurrentSeason();
+  const seasonalContainer = document.getElementById("seasonal-container");
+  const allCards = document.querySelectorAll(".card");
+
+  allCards.forEach(card => {
+      const categories = card.getAttribute("categories") || "";
+      const cardCategories = categories.split(",").map(c => c.trim());
+
+      if (cardCategories.includes(season)) {
+          const clone = card.cloneNode(true);
+          seasonalContainer.appendChild(clone);
+      }
+  });
+}
+
+window.addEventListener("DOMContentLoaded", showSeasonalPicks);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    //Reason to believe old data but keeping it in case
 document.addEventListener('DOMContentLoaded', function () { //Ensures the Javascript runs when the HTML page is fully loaded and not before, name of the event being listened to is 'DOMContentLoaded'
 
   const urlParams = new URLSearchParams(window.location.search); //creates an object called urlParams that is aimed at taking the string user types and puts it in the query
@@ -29,3 +101,4 @@ document.addEventListener('DOMContentLoaded', function () { //Ensures the Javasc
     filterCards(query);
   }
 });
+*/
