@@ -95,3 +95,14 @@
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
 }
+
+.scroll-box {
+    max-height: 750px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 25px;
+    border-radius: 25px;
+    scroll-behavior: smooth;
+    position: sticky;
+    top: 25px;
+}

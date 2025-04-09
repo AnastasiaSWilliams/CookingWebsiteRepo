@@ -109,7 +109,9 @@ document.querySelectorAll('.category-filter').forEach(filter => {
     });
 });
 
-// Show favorites automatically on page load
+// Show favorites automatically on page load, ONLY if favorites container exists
 window.onload = function() {
-    showFavorites();
+    if (document.getElementById('favorites-container')) {
+        showFavorites();
+    }
 };
