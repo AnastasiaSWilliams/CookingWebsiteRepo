@@ -1,5 +1,5 @@
 function getCurrentSeason() {
-  const month = new Date().getMonth();
+  const month = new Date().getMonth(); // 0 = January
   if (month >= 2 && month <= 4) return "Spring";
   if (month >= 5 && month <= 7) return "Summer";
   if (month >= 8 && month <= 10) return "Autumn";
@@ -8,52 +8,32 @@ function getCurrentSeason() {
 
 function showSeasonalPicks() {
   const season = getCurrentSeason();
+  const allCards = document.querySelectorAll("#main-card-grid a.btn.btn-primary");
   const seasonalContainer = document.getElementById("seasonal-container");
-  const allCards = document.querySelectorAll(".card");
 
-  allCards.forEach(card => {
-      const categories = card.getAttribute("categories") || "";
-      const cardCategories = categories.split(",").map(c => c.trim());
+  if (!seasonalContainer) {
+      console.warn("Seasonal container not found on the page.");
+      return;
+  }
 
-      if (cardCategories.includes(season)) {
-          const clone = card.cloneNode(true);
-          seasonalContainer.appendChild(clone);
-      }
-  });
+  allCards.forEach(link => {
+    const card = link.querySelector(".card");
+    if (!card) return;
+
+    const categories = card.getAttribute("categories") || "";
+    const cardCategories = categories.split(',').map(c => c.trim());
+
+    if (cardCategories.includes(season)) {
+        const clone = link.cloneNode(true); // clone the full link wrapper
+        seasonalContainer.appendChild(clone);
+    }
+});
 }
 
-window.addEventListener("DOMContentLoaded", showSeasonalPicks);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Run the seasonal display logic after the DOM is fully loaded
+window.addEventListener("DOMContentLoaded", () => {
+  showSeasonalPicks();
+});
 
 
 
