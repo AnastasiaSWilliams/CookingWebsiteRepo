@@ -15,13 +15,23 @@ function filterFavorites() {
         // Check if any category matches the selected categories
         const matchesCategory = selectedCategories.size === 0 || cardCategories.some(category => selectedCategories.has(category.trim()));
 
-        // Find the card element for this favorite and show/hide based on category filter
+        // Find the card element for this favorite
         const cardElement = document.getElementById(favorite.id);
+        const starBtn = cardElement.querySelector(`#favorButton${favorite.id.charAt(favorite.id.length - 1)}`); // Dynamically select the button
+
         if (cardElement) {
+            // Show or hide card based on category filter
             if (matchesCategory) {
                 cardElement.style.display = '';  // Show card
             } else {
                 cardElement.style.display = 'none';  // Hide card
+            }
+
+            // Update the star image based on the favorited status
+            if (favorite.favorited) {
+                starBtn.src = "images/smiley_star.svg"; // Filled star
+            } else {
+                starBtn.src = "images/star.svg"; // Empty star
             }
         }
     });
@@ -80,7 +90,7 @@ function addToFavorites(cardId) {
     const cardImage = card.querySelector('.card-img-top').src;
     const recipeLink = card.querySelector('a').href;  // Get the "Go to Recipe" link
     const cardCategories = card.getAttribute('categories'); // Get the categories from the card
-    const switch_img = card.getAttribute('favorButton'); // Get buttn from card
+    const starBtn = card.querySelector('#favorButton'); // Get buttn from card
 
     // Check if the card is already in favorites
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -93,7 +103,8 @@ function addToFavorites(cardId) {
             title: cardTitle,
             image: cardImage,
             link: recipeLink,  // Store the link as well
-            categories: cardCategories  // Store the categories as well
+            categories: cardCategories,  // Store the categories as well
+            favorited: true
         });
 
         // Save the updated favorites back to localStorage
@@ -101,10 +112,21 @@ function addToFavorites(cardId) {
 
         alert(`${cardTitle} added to favorites!`);
         // ${cardTitle} -> change its image
-        img.src = switch_img ? "../images/star.svg" : "../images/smiley_star.svg";
-        img.setAttribute('favorButton', !switch_img);
+        starBtn.src = "./images/smiley_star.svg";
+        // then save to LS
+
+        // img.src = switch_img ? "../images/star.svg" : "../images/smiley_star.svg";
+        // img.setAttribute('favorButton', !switch_img);
+        // card.classList.add('favorited');
     } else {
-        alert(`${cardTitle} is already in your favorites.`);
+        // If it's already in favorites, remove it and mark as not favorite
+        favorites = favorites.filter(fav => fav.id !== cardId); // Remove from favorites
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+
+        starBtn.src = "./images/star.svg";
+        //then save to LS
+
+        removeFromFavorites(cardId);
     }
 }
 

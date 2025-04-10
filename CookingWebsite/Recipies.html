@@ -139,20 +139,26 @@
         <div class="mainNav">
             <div class="card-container">
                 <div class="card" id="card1" categories="All, American, Standard, Hard">
-                    <button class="btn btn-primary clear" onclick="addToFavorites('card1')">
-                        <image id="favorButton" src="images/star.svg" width="50" height="50" />
+                    <!-- ⭐ Favorite Button -->
+                    <button class="btn clear favorite-btn" onclick="addToFavorites('card1')">
+                        <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
                     </button>
-                    <img src="images/pierogi.jpg" class="card-img-top" alt="pierogi">
+
+                    <!-- Card Image -->
+                    <img src="images/pierogi.jpg" class="card-img-top" alt="pierogi" />
+
+                    <!-- Card Content -->
                     <div class="card-body">
-                        <h5 class="card-title">Pierogi</h5>
+                        <h5 class="card-title">Pierogi</h5> <!-- This is selected with .card-title -->
                         <p class="card-text">Learn how to make this delicious Polish food.</p>
                         <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                        <!-- This is selected with <a> -->
                     </div>
                 </div>
 
                 <div class="card" id="card2" categories="All, Indian, Short, Easy">
-                    <button id="favorButton" class="btn btn-primary clear" onclick="addToFavorites('card2')">
-                        <image src="images/star.svg" width="50" height="50" />
+                    <button class="btn favorite-btn clear" onclick="addToFavorites('card2')">
+                        <image id="favorButton" src="images/star.svg" width="50" height="50" />
                     </button>
                     <img src="images/rice.jpg" class="card-img-top" alt="rice">
                     <div class="card-body">
@@ -164,8 +170,8 @@
                 </div>
 
                 <div class="card" id="card3" categories="All, British, Long, Moderate">
-                    <button id="favorButton" class="btn btn-primary clear" onclick="addToFavorites('card1')">
-                        <image src="images/star.svg" width="50" height="50" />
+                    <button class="btn btn-primary clear" onclick="addToFavorites('card3')">
+                        <image id="favorButton" src="images/star.svg" width="50" height="50" />
                     </button>
                     <img src="images/pineapple.png" class="card-img-top" alt="pineapple">
                     <div class="card-body">
@@ -174,6 +180,9 @@
                         <a href="genericOther.html" class="btn btn-primary">Other</a><br>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
