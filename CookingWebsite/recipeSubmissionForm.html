@@ -12,6 +12,7 @@
 
     <!--Scripts Imported-->
     <script defer src="scripts/scripts.js"></script>
+    <script defer src="scripts/form.js"></script>
 </head>
 <body>
     <style>
@@ -72,12 +73,18 @@
             <div class="col">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name"><br><br>
+                
                 <label for="ingredients">Ingredients:</label> <br>
-                <input type="text" id="ingredients" name="ingredients"><br>
-                <button class="btn btn-primary">+</button> <br>
+                <div id="ingreBox">
+                    <input type="text" id="ingredients" name="ingredients"><br>   
+                </div>
+                <button id="mybtn" class="btn btn-primary" onclick="addIngre()">+</button> <br>
+                
                 <label for="directions">Directions:</label> <br>
-                <input type="text" id="directions" name="directions"><br>
-                <button class="btn btn-primary">+</button><br>
+                <div id="direcBox">
+                    <input type="text" id="directions" name="directions"><br>
+                </div>
+                <button class="btn btn-primary" onclick="addDirec()">+</button><br>
             </div>
             <div class="col">
                 <label for="box">About the recipe:</label> <br>
@@ -85,22 +92,28 @@
                 <br>
 
                 <label for="dietary">Dietary:</label><br>
-                <input type="checkbox">Vegetarian <br>
-                <input type="checkbox">High-Protein <br>
-                <input type="checkbox">Gluten Free <br>
                 <input type="checkbox">Dairy Free <br>
+                <input type="checkbox">Gluten Free <br>
+                <input type="checkbox">High-Protein <br>
                 <input type="checkbox">Nut Free <br>
                 <input type="checkbox">Vegan <br>
+                <input type="checkbox">Vegetarian <br>
                 <br>
                 </div>
                 <div class="col">
-                <label for="S">Season:</label>
-                <select name="rating" id="S">
-                    <option value="All">All</option>
-                    <option value="Summer">Summer</option>
+                <label for="c">Category:</label>
+                <select name="rating" id="c">
+                    <option value="Appetizers">Appetizers</option>
                     <option value="Autumn">Autumn</option>
-                    <option value="Winter">Winter</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Snacks">Snacks</option>
                     <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Winter">Winter</option>
                 </select><br><br>
 
                 <label for="C">Cuisine:</label>
