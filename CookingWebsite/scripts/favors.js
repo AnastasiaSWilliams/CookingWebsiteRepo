@@ -110,7 +110,6 @@ function addToFavorites(cardId) {
         // Save the updated favorites back to localStorage
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
-        alert(`${cardTitle} added to favorites!`);
         // ${cardTitle} -> change its image
         starBtn.src = "./images/smiley_star.svg";
         // then save to LS
