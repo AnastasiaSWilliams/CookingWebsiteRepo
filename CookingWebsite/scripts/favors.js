@@ -70,6 +70,8 @@ function removeFromFavorites(cardId) {
     showFavorites();
 }
 
+
+
 // This function will clone a card to the favorites page
 function addToFavorites(cardId) {
     // Get the card details dynamically using its ID
@@ -78,6 +80,7 @@ function addToFavorites(cardId) {
     const cardImage = card.querySelector('.card-img-top').src;
     const recipeLink = card.querySelector('a').href;  // Get the "Go to Recipe" link
     const cardCategories = card.getAttribute('categories'); // Get the categories from the card
+    const switch_img = card.getAttribute('favorButton'); // Get buttn from card
 
     // Check if the card is already in favorites
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -97,6 +100,9 @@ function addToFavorites(cardId) {
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         alert(`${cardTitle} added to favorites!`);
+        // ${cardTitle} -> change its image
+        img.src = switch_img ? "../images/star.svg" : "../images/smiley_star.svg";
+        img.setAttribute('favorButton', !switch_img);
     } else {
         alert(`${cardTitle} is already in your favorites.`);
     }
