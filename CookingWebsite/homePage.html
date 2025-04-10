@@ -16,11 +16,6 @@
 </head>
 
 <body>
-    <style>
-        body {
-            color: #4e3b2f;
-        }
-    </style>
     <header>
         <div class="container">
             <div class="row">
@@ -34,25 +29,6 @@
                         <button type="submit">Search</button>
                     </form>
                 </div>
-                <!--
-                <div class="col4">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        settings menu
-                        <div class="navbar-nav">
-                            <div class="container-fluid">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                                    <span class="navbar-stoggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <div class="navbar-nav">
-                                        <a class="nav-link" href="">Light/Dark Mode</a>
-                                        <a class="nav-link" href="">Seizure Mode</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </nav>
-                    </div>-->
             </div>
             <div class="row">
                 <!--home, recipes, about me, search, favorites-->
@@ -79,21 +55,24 @@
             </div>
             <div class="col-6">
                 <h2>Recipe of the Day</h2>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/rice.jpg" class="img-fluid rounded-start" alt="rice">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Rice</h5>
-                                <p class="card-text">Learn how to make this infinitely customizable food and increase
-                                    your cooking skills.</p>
-                                <a href="rice.html" class="btn btn-primary">Go to Recipe</a>
+                <a href="rice.html" class="btn btn-primary">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="images/rice.jpg" class="img-fluid rounded-start" alt="rice">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rice</h5>
+                                    <p class="card-text">Learn how to make this infinitely customizable food and
+                                        increase
+                                        your cooking skills.</p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -101,131 +80,59 @@
             <!--spacing row, cream color-->
         </div>
         <!--recipe cards here-->
-<<<<<<< HEAD
         <div class="row py-10">
             <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/pierogi.jpg" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;"
-                        alt="pierogi">
-                    <div class="card-body">
-                        <h5 class="card-title">Pierogi</h5>
-                        <p class="card-text">Learn how to make this delicious Polish food.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                <a class="btn btn-primary" href="genericFood.html">
+                    <div categories="All, American, Standard, Hard, Summer" class="card" id="card1">
+                        <img alt="pierogi" class="card-img-top" src="images/pierogi.jpg" />
+                        <div class="card-body">
+                            <h5 class="card-title">Pierogi</h5>
+                            <p class="card-text">Learn how to make this delicious Polish food.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/rice.jpg" class="card-img-top mx-auto mt-1" style="width: 10rem; height: 14rem;"
-                        alt="rice">
-                    <div class="card-body">
-                        <h5 class="card-title">Rice</h5>
-                        <p class="card-text">Learn how to make this infinitely customizable food and increase your
-                            cooking skills.</p>
-                        <a href="rice.html" class="btn btn-primary">Go to Recipe</a>
+                <a class="btn btn-primary" href="genericFood.html">
+                    <div categories="All, Indian, Short, Easy, Autumn" class="card" id="card2">
+                        <img alt="rice" class="card-img-top" src="images/rice.jpg" />
+                        <div class="card-body">
+                            <h5 class="card-title">Rice</h5>
+                            <p class="card-text">Learn how to make this infinitely customizable food and increase your
+                                cooking skills.</p>
+
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/pineapple.png" class="card-img-top mx-auto" style="width: 10rem; height: 14rem;"
-                        alt="pineapple">
-                    <div class="card-body">
-                        <h5 class="card-title">Food</h5>
-                        <p class="card-text">What the food is and why it is detremental.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Food</a>
+                <a class="btn btn-primary" href="genericOther.html">
+                    <div categories="All, British, Long, Moderate, Winter" class="card" id="card3">
+                        <img alt="pineapple" class="card-img-top" src="images/pineapple.png" />
+                        <div class="card-body">
+                            <h5 class="card-title">Other</h5>
+                            <p class="card-text">What the food is and why it is unique</p>
+
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
-        <br><br>
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/rice.jpg" class="card-img-top mx-auto mt-1" style="width: 10rem; height: 14rem;"
-                        alt="rice">
-                    <div class="card-body">
-                        <h5 class="card-title">Rice</h5>
-                        <p class="card-text">Learn how to make this infinitely customizable food and increase your
-                            cooking skills.</p>
-                        <a href="rice.html" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/rice.jpg" class="card-img-top mx-auto mt-1" style="width: 10rem; height: 14rem;"
-                        alt="rice">
-                    <div class="card-body">
-                        <h5 class="card-title">Rice</h5>
-                        <p class="card-text">Learn how to make this infinitely customizable food and increase your
-                            cooking skills.</p>
-                        <a href="rice.html" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem; height: 22rem;">
-                    <img src="images/rice.jpg" class="card-img-top mx-auto mt-1" style="width: 10rem; height: 14rem;"
-                        alt="rice">
-                    <div class="card-body">
-                        <h5 class="card-title">Rice</h5>
-                        <p class="card-text">Learn how to make this infinitely customizable food and increase your
-                            cooking skills.</p>
-                        <a href="rice.html" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-=======
-<div class="row py-10">
-    <div class="col">
-        <div categories="All, American, Standard, Hard, Summer" class="card" id="card1">
-            <img alt="pierogi" class="card-img-top" src="images/pierogi.jpg"/>
-            <div class="card-body">
-                <h5 class="card-title">Pierogi</h5>
-                <p class="card-text">Learn how to make this delicious Polish food.</p>
-                <a class="btn btn-primary" href="genericFood.html">Go to Recipe</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div categories="All, Indian, Short, Easy, Autumn" class="card" id="card2">
-            <img alt="rice" class="card-img-top" src="images/rice.jpg"/>
-            <div class="card-body">
-                <h5 class="card-title">Rice</h5>
-                <p class="card-text">Learn how to make this infinitely customizable food and increase your cooking skills.</p>
-                <a class="btn btn-primary" href="genericFood.html">Go to Recipe</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div categories="All, British, Long, Moderate, Winter" class="card" id="card3">
-            <img alt="pineapple" class="card-img-top" src="images/pineapple.png"/>
-            <div class="card-body">
-                <h5 class="card-title">Other</h5>
-                <p class="card-text">What the food is and why it is unique</p>
-                <a class="btn btn-primary" href="genericOther.html">Other</a>
-            </div>
-        </div>
-    </div>
-</div>
->>>>>>> 702159c1c9277b0cd7343c93f136286a32bd17e8
 
 
-    <!--Seasonal Section-->
-    <div class="row bg-secondary my-2" style="height: 50px;">
-        <h2>Seasonal Picks</h2>
-        <div id="seasonal-container" class="card-container">
-            <!--Seasonal Stuff go here!-->
+        <!--Seasonal Section-->
+        <div class="row bg-secondary my-2" style="height: 50px;">
+            <h2>Seasonal Picks</h2>
+            <div id="seasonal-container" class="card-container">
+                <!--Seasonal Stuff go here!-->
+            </div>
         </div>
-    </div>
 
-    <div class="row text-center">
-        <h2>Submit your own recipe!</h2>
-        <a class="btn btn-primary" href="recipeSubmissionForm.html" type="button">Go to submission form</a>
-    </div>
-    <br/>
+        <div class="row text-center">
+            <h2>Submit your own recipe!</h2>
+            <a class="btn btn-primary" href="recipeSubmissionForm.html" type="button">Go to submission form</a>
+        </div>
+        <br />
     </div>
     <footer>
         <!--seems like we should have one of these, not sure what exactly should be in it-->
