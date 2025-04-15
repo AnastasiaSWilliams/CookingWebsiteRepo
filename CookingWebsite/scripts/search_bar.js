@@ -70,3 +70,21 @@ function initSearchFiltering() {
 setTimeout(() => {
     initSearchFiltering();
 }, 200);
+
+// MOBILE FILTER SIDEBAR TOGGLE
+document.addEventListener('DOMContentLoaded', function() {
+    const filterToggleBtn = document.getElementById('filter-toggle-btn');
+    const filterSidebar = document.querySelector('.filter-sidebar');
+  
+    if (filterToggleBtn && filterSidebar) {
+      filterToggleBtn.addEventListener('click', function () {
+        filterSidebar.classList.toggle('active');
+        // Optionally, update button text:
+        if (filterSidebar.classList.contains('active')) {
+          filterToggleBtn.textContent = 'Hide Filters';
+        } else {
+          filterToggleBtn.textContent = 'Show Filters';
+        }
+      });
+    }
+  });

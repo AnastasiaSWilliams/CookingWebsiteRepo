@@ -6,30 +6,32 @@
     --bs-success: #064561;
 }
 
-
-.bg-primary { 
+.bg-primary {
     background-color: var(--bs-primary) !important;
 }
+
 .btn-primary {
     background-color: var(--bs-primary) !important;
     --bs-btn-border-color: var(--bs-primary) !important;
 }
-.bg-secondary { 
-    background-color: var(--bs-secondary) !important; 
+
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
 }
+
 button {
     transition: transform 0.2s ease;
-  }
-  
+}
+
 button:hover {
     transform: scale(1.3);
 }
+
 .clear {
     background: transparent !important;
     border: none !important;
     padding: 0;
     box-shadow: none;
-    
     position: absolute;
     top: 10px;
     right: 10px;
@@ -40,60 +42,50 @@ button:hover {
 a {
     display: inline-block;
     transition: transform 0.2s ease;
-    text-decoration: none; 
+    text-decoration: none;
 }
-  
+
 a:hover {
     transform: scale(1.05);
 }
 
-
 .search-bar {
     width: 100%;
-    max-width: 700;
+    max-width: 700px;
     background: rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: left;
     border-radius: 60px;
     padding: 10px 20px;
-    /*backdrop-filter: blur(4px) saturate(180%);*/
 }
 
-.search-bar input
-    {
-        /*background: transparent;*/
-        flex: 1;
-        border: 1;
-        outline: rgb(0, 0, 0);
-        padding: 24px 20px;
-        font-size: 20px;
-        color: #000000
-    }
+.search-bar input {
+    flex: 1;
+    border: 1px solid #000000;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #000000;
+}
 
-    .user-cards
-    {
-        display: grid;
-        grid-template-columns: repeat(auto-fill);
-    }
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill);
+}
 
-    .card > .header
-    {
-        margin-bottom: .25rem;
-    }
+.card > .header {
+    margin-bottom: 0.25rem;
+}
 
-    .card > .body 
-    {
-        font-size: .8rem;
-        color: #777;
-    }
+.card > .body {
+    font-size: 0.8rem;
+    color: #777;
+}
 
-    .hide 
-    {
-        display: none;
-    }
+.hide {
+    display: none;
+}
 
-
-/* Shared Card Styling - Clean Version */
 .card {
     width: 18rem;
     display: block;
@@ -134,4 +126,51 @@ a:hover {
     scroll-behavior: smooth;
     position: sticky;
     top: 25px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .card-img-top {
+        height: auto;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .scroll-box {
+        position: static !important;
+        width: 100% !important;
+        max-height: none !important;
+        background-color: #f7d9ab;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .sidenav {
+        width: 100%;
+    }
+}
+
+.filter-sidebar .scroll-box {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .filter-sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .filter-sidebar .scroll-box {
+        max-height: none;
+        overflow: visible;
+    }
 }

@@ -20,11 +20,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-sm-6 col-md-4">
                 <h1>Recipes</h1>
             </div>
             <!--Search Bar-->
-            <div class="col">
+            <div class="col-12 col-sm-6 col-md-4">
                 <form action="Recipies.html" method="get" class="search-bar">
                     <input type="text" id="search-input" placeholder="Search for recipes" name="query">
                     <button type="submit">Search</button>
@@ -45,95 +45,75 @@
             </nav>
         </div>
 
-        <div class="sidenav">
-            <h6 class="ms-1">Advanced Search</h6>
-            <div class="scroll-box">
-                <p>
-                <h6>Dietary</h6>
-                <!-- Category checkboxes -->
-                <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Vegetarian"> Vegetarian
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="High-Protein">
-                    High-Protein
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Gluten Free"> Gluten Free
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-4" value="Dairy Free"> Dairy Free
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-5" value="Nut Free"> Nut Free
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-6" value="Vegan"> Vegan
+        <button class="btn btn-secondary d-lg-none" id="filter-toggle-btn">Filter</button>
+
+        <div class="sidenav filter-sidebar">
+            <div class="card p-3 shadow-sm">
+              <h5 class="mb-3">🔍 Advanced Search</h5>
+          
+              <div class="scroll-box">
+          
+                <div class="mb-4">
+                  <h6>Dietary</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Vegetarian"> Vegetarian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="High-Protein"> High-Protein<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Gluten Free"> Gluten Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Dairy Free"> Dairy Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Nut Free"> Nut Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Vegan"> Vegan
+                  </div>
                 </div>
-                <br>
-                <h6>Seasons</h6>
-                <!-- Category checkboxes -->
-                <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="All"> All
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Summer"> Summer
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Autumn"> Autumn
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-4" value="Winter"> Winter
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-5" value="Spring"> Spring
+          
+                <div class="mb-4">
+                  <h6>Seasons</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="All"> All<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Summer"> Summer<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Autumn"> Autumn<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Winter"> Winter<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Spring"> Spring
+                  </div>
                 </div>
-                <br>
-                <h6>Cuisine</h6>
-                <!-- Category checkboxes -->
-                <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="American"> American
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Asian"> Asian
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="British"> British
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-4" value="Cuban"> Cuban
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-5" value="French"> French
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-6" value="Indian"> Indian
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-7" value="Italian"> Italian
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-8" value="Mediterranean">
-                    Mediterranean
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-9" value="Mexican"> Mexican
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-10" value="Middle Eastern"> Middle
-                    Eastern
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-11" value="Thai"> Thai
+          
+                <div class="mb-4">
+                  <h6>Cuisine</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="American"> American<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Asian"> Asian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="British"> British<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Cuban"> Cuban<br>
+                    <input type="checkbox" class="category-filter ms-1" value="French"> French<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Indian"> Indian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Italian"> Italian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Mediterranean"> Mediterranean<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Mexican"> Mexican<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Middle Eastern"> Middle Eastern<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Thai"> Thai
+                  </div>
                 </div>
-                <br>
-                <h6>Length</h6>
-                <!-- Category checkboxes -->
-                <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Short"> Short 5 min - 10
-                    min
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Standard"> Standard 15
-                    min - 25 min
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Long"> Long 30 min - 1
-                    hour
+          
+                <div class="mb-4">
+                  <h6>Length</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Standard"> Standard 15–25 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Long"> Long 30–60 min
+                  </div>
                 </div>
-                <br>
-                <h6>Difficulty</h6>
-                <!-- Category checkboxes -->
+          
                 <div>
-                    <input type="checkbox" class="category-filter ms-1" id="category-1" value="Easy"> Easy
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-2" value="Moderate"> Moderate
-                    <br>
-                    <input type="checkbox" class="category-filter ms-1" id="category-3" value="Hard"> Hard
+                  <h6>Difficulty</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Easy"> Easy<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Moderate"> Moderate<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Hard"> Hard
+                  </div>
                 </div>
-                <br>
-                </p>
+          
+              </div>
             </div>
-        </div>
+          </div>
 
         <!-- Cards Section -->
         <div class="mainNav">
@@ -145,7 +125,7 @@
                     </button>
 
                     <!-- Card Image -->
-                    <img src="images/pierogi.jpg" class="card-img-top" alt="pierogi" />
+                    <img src="images/pierogi.jpg" class="card-img-top img-fluid" alt="pierogi" />
 
                     <!-- Card Content -->
                     <div class="card-body">
@@ -163,7 +143,7 @@
                     </button>
 
                     <!-- Card Image -->
-                    <img src="images/rice.jpg" class="card-img-top" alt="rice">
+                    <img src="images/rice.jpg" class="card-img-top img-fluid" alt="rice">
 
                     <!-- Card Content -->
                     <div class="card-body">
@@ -181,7 +161,7 @@
                     </button>
 
                     <!-- Card Image -->
-                    <img src="images/pineapple.png" class="card-img-top" alt="pineapple">
+                    <img src="images/pineapple.png" class="card-img-top img-fluid" alt="pineapple">
 
                     <!-- Card Content -->
                     <div class="card-body">
@@ -198,7 +178,7 @@
                     </button>
 
                     <!-- Card Image -->
-                    <img src="images/easter_egg.webp" class="card-img-top" alt="pineapple">
+                    <img src="images/easter_egg.webp" class="card-img-top img-fluid" alt="pineapple">
 
                     <!-- Card Content -->
                     <div class="card-body">

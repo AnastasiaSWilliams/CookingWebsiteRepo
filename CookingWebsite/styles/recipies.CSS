@@ -1,60 +1,73 @@
+/* Default: Mobile-first layout */
 .sidenav {
-    width: 175px;
-    position: fixed;
-    z-index: 1;
-    top: 130px;
-    left: 10px;
+    width: 100%;
+    position: static;
     background: #f7d9ab;
-    overflow-x: hidden;
-    padding: 8px 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
 }
 
-.mainNav {
-    margin-left: 140px;
-    font-size: 28px;
-    padding: 20px 10px;
+.scroll-box {
+    max-height: none;
+    overflow: visible;
 }
 
-/* In Recipes.css */
+/* Responsive grid for cards */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
-    justify-items: center; /* Center cards */
+    padding: 1rem;
 }
 
-/* Make sure cards are styled correctly */
 .card {
-    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-img-top {
     width: 100%;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    height: 180px;
+    object-fit: cover;
 }
 
-/* Add this rule to override any flex behavior */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-adjust columns based on screen size */
-    gap: 1rem;
-    justify-items: stretch;
-    width: 100%;
-    margin: 0 auto;
-}
+/* Desktop-specific layout */
+@media (min-width: 992px) {
+    .sidenav {
+        width: 175px;
+        position: fixed;
+        top: 130px;
+        left: 10px;
+        z-index: 1;
+    }
 
-/* When cards are hidden, they are removed from the grid layout */
-.card.hidden {
-    display: none;
-}
+    .mainNav {
+        margin-left: 200px;
+    }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2 cards per row on smaller screens */
+    .scroll-box {
+        max-height: 80vh;
+        overflow-y: auto;
     }
 }
 
-@media (max-width: 480px) {
-    .card-container {
-        grid-template-columns: 1fr; /* 1 card per row on very small screens */
+@media (max-width: 991px) {
+    .filter-sidebar {
+      display: none;
     }
-}
+    .filter-sidebar.active {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
