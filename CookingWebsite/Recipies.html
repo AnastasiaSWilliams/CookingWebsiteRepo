@@ -13,6 +13,7 @@
     <!--Scripts Imported-->
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
+    <script defer src="scripts/card_json_loader.js"></script>
 
     <title>Recipes</title>
 </head>
@@ -98,8 +99,8 @@
                   <h6>Length</h6>
                   <div>
                     <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
-                    <input type="checkbox" class="category-filter ms-1" value="Standard"> Standard 15–25 min<br>
-                    <input type="checkbox" class="category-filter ms-1" value="Long"> Long 30–60 min
+                    <input type="checkbox" class="category-filter ms-1" value="Standard">Standard 15–25 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Long">Long 30–60 min
                   </div>
                 </div>
           
@@ -119,7 +120,7 @@
         <!-- Cards Section -->
         <div class="mainNav">
             <div class="card-container">
-                <div class="card" id="card1" categories="Summer, American, Standard, Hard">
+                <div class="card" id="card1" category-filter ms-1="Summer, American, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card1')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -137,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card2" categories="Summer, Indian, Short, Easy">
+                <div class="card" id="card2" category-filter ms-1="Summer, Indian, Short, Easy">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card2')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -155,7 +156,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card3" categories="Spring, British, Long, Moderate">
+                <div class="card" id="card3" category-filter ms-1="Spring, British, Long, Moderate">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card3')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -172,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card4" categories="Winter, Polish, Standard, Hard">
+                <div class="card" id="card4" category-filter ms-1="Winter, Polish, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card4')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
