@@ -11,13 +11,15 @@
     <link href="styles/customBootstrap.css" rel="stylesheet">
 
     <!--Scripts Imported-->
+    <script defer src="scripts/scripts.js"></script>
+    <script defer src="scripts/card_json_loader.js"></script>
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
 
     <title>Recipes</title>
 </head>
 
-<body>
+<body class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
@@ -25,9 +27,9 @@
             </div>
             <!--Search Bar-->
             <div class="col-12 col-sm-6 col-md-4">
-                <form action="Recipies.html" method="get" class="search-bar">
-                    <input type="text" id="search-input" placeholder="Search for recipes" name="query">
-                    <button type="submit">Search</button>
+                <form action="Recipies.html" method="get" class="search-bar bg-light">
+                    <input class="bg-secondary" type="text" id="search-input" placeholder="Search for recipes" name="query">
+                    <button class="bg-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -41,6 +43,7 @@
                         <a class="nav-link" href="about.html">About</a>
                         <a class="nav-link" href="Favorites.html">Favorites</a>
                     </div>
+                    <button class="btn btn-primary" id="theme-switch">Change theme</button>
                 </div>
             </nav>
         </div>
@@ -98,8 +101,8 @@
                   <h6>Length</h6>
                   <div>
                     <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
-                    <input type="checkbox" class="category-filter ms-1" value="Standard"> Standard 15–25 min<br>
-                    <input type="checkbox" class="category-filter ms-1" value="Long"> Long 30–60 min
+                    <input type="checkbox" class="category-filter ms-1" value="Standard">Standard 15–25 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Long">Long 30–60 min
                   </div>
                 </div>
           
@@ -119,7 +122,7 @@
         <!-- Cards Section -->
         <div class="mainNav">
             <div class="card-container">
-                <div class="card" id="card1" categories="Summer, American, Standard, Hard">
+                <div class="card bg-light" id="card1" category-filter ms-1="Summer, American, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card1')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -132,12 +135,12 @@
                     <div class="card-body">
                         <h5 class="card-title">Pierogi</h5> <!-- This is selected with .card-title -->
                         <p class="card-text">Learn how to make this delicious Polish food.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                         <!-- This is selected with <a> -->
                     </div>
                 </div>
 
-                <div class="card" id="card2" categories="Summer, Indian, Short, Easy">
+                <div class="card bg-light" id="card2" category-filter ms-1="Summer, Indian, Short, Easy">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card2')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -151,11 +154,11 @@
                         <h5 class="card-title">Rice</h5>
                         <p class="card-text">Learn how to make this infinitely customizable food and increase your
                             cooking skills.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
 
-                <div class="card" id="card3" categories="Spring, British, Long, Moderate">
+                <div class="card bg-light" id="card3" category-filter ms-1="Spring, British, Long, Moderate">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card3')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -168,11 +171,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Other</h5>
                         <p class="card-text">What the food is and why it is unique</p>
-                        <a href="genericFood.html" class="btn btn-primary">Other</a><br>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
 
-                <div class="card" id="card4" categories="Winter, Polish, Standard, Hard">
+                <div class="card bg-light" id="card4" category-filter ms-1="Winter, Polish, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card4')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -185,7 +188,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Other the Sequel</h5>
                         <p class="card-text">I am unique YIPEE!</p>
-                        <a href="genericFood.html" class="btn btn-primary">Other</a><br>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
             </div>

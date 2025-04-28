@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,12 @@
     <script defer src="scripts/scripts.js"></script>
     <script defer src="scripts/form.js"></script>
 </head>
-<body>
-    <style>
+<body class="bg-light">
+    <!--<style>
         body {
             color: #4e3b2f;
         }
-    </style>
+    </style>-->
     <header>
         <div class="container">
             <div class="row">
@@ -28,30 +28,11 @@
                 </div>
                 <!--Search Bar-->
                 <div class="col-12 col-sm-6 col-md-4">
-                    <form action="Recipies.html" method="get" class="search-bar">
-                        <input type="text" id="search-input" placeholder="Search for recipes" name="query">
-                        <button type="submit">Search</button>
+                    <form action="Recipies.html" method="get" class="search-bar bg-light">
+                        <input class="bg-secondary" type="text" id="search-input" placeholder="Search for recipes" name="query">
+                        <button class="bg-primary" type="submit">Search</button>
                     </form>
                 </div>
-                <!--
-                <div class="col4">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        settings menu
-                        <div class="navbar-nav">
-                            <div class="container-fluid">
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                                    <span class="navbar-stoggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <div class="navbar-nav">
-                                        <a class="nav-link" href="">Light/Dark Mode</a>
-                                        <a class="nav-link" href="">Seizure Mode</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </nav>
-                    </div>-->
             </div>
             <div class="row">
                 <!--home, recipes, about me, search, favorites-->
@@ -63,6 +44,7 @@
                             <a class="nav-link" href="about.html">About</a>
                             <a class="nav-link" href="Favorites.html">Favorites</a>
                         </div>
+                        <button class="btn btn-primary" id="theme-switch">Change theme</button>
                     </div>
                 </nav>
             </div>
@@ -76,19 +58,19 @@
                 
                 <label for="ingredients">Ingredients:</label> <br>
                 <div id="ingreBox">
-                    <input type="text" id="ingredients" name="ingredients"><br>   
+                    <input type="text" id="ingredients" name="ingredients">
                 </div>
-                <button id="mybtn" class="btn btn-primary" onclick="addIngre()">+</button> <br>
+                <button id="mybtn1" class="btn btn-primary" onclick="addIngre()">+</button> <br>
                 
                 <label for="directions">Directions:</label> <br>
                 <div id="direcBox">
                     <input type="text" id="directions" name="directions"><br>
                 </div>
-                <button class="btn btn-primary" onclick="addDirec()">+</button><br>
+                <button id="mybtn2" class="btn btn-primary" onclick="addDirec()">+</button><br>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <label for="box">About the recipe:</label> <br>
-                <textarea id="box" name="words" rows="1" cols="15"></textarea><br>
+                <textarea id="box" name="words" rows="4" cols="30"></textarea><br>
                 <br>
 
                 <label for="dietary">Dietary:</label><br>
@@ -143,7 +125,7 @@
                 </select><br><br>
 
                 <label for="Images">Images:</label>
-                <input type="file" accept="image/png, image/jpeg, image/webp" multiple>
+                <input id="images" type="file" accept="image/png, image/jpeg, image/webp" multiple>
             </div>
         </div>
         <br>
