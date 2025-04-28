@@ -87,6 +87,8 @@ function removeFromFavorites(cardId) {
 function addToFavorites(cardId) {
     // Get the card details dynamically using its ID
     const card = document.getElementById(cardId);
+    if (!card) return;
+    
     const cardTitle = card.querySelector('.card-title').innerText;
     const cardImage = card.querySelector('.card-img-top').src;
     const recipeLink = card.querySelector('a').href;  // Get the "Go to Recipe" link

@@ -21,11 +21,11 @@
 <body class="bg-light">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-sm-6 col-md-4">
                 <h1>Favorites</h1>
             </div>
             <!--Search Bar-->
-            <div class="col">
+            <div class="col-12 col-sm-6 col-md-4">
                 <form action="Recipies.html" method="get" class="search-bar bg-light">
                     <input class="bg-secondary" type="text" id="search-input" placeholder="Search for recipes" name="query">
                     <button class="bg-primary" type="submit">Search</button>
@@ -37,7 +37,7 @@
             <nav class="navbar bg-secondary navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="homepage.html">Home</a>
+                        <a class="nav-link" href="homePage.html">Home</a>
                         <a class="nav-link" href="Recipies.html">Recipes</a>
                         <a class="nav-link" href="about.html">About</a>
                         <a class="nav-link" href="Favorites.html">Favorites</a>
@@ -47,87 +47,73 @@
             </nav>
         </div>
 
-        <div class="sidenav bg-secondary">
-            <h6 class="ms-1">Advanced Search</h6>
+<button class="btn btn-secondary d-lg-none" id="filter-toggle-btn">Filter</button>
+
+<div class="sidenav filter-sidebar">
+    <div class="card p-3 shadow-sm">
+      <h5 class="mb-3">🔍 Advanced Search</h5>
+  
                 <div class="scroll-box">
-                <p>
+  
+        <div class="mb-4">
+          <br>
                     <h6>Dietary</h6>
-                    <!-- Category checkboxes -->
                     <div>
-                        <input type="checkbox" class="category-filter ms-1" id="category-1" value="Vegetarian"> Vegetarian
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-2" value="High-Protein"> High-Protein
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-3" value="Gluten Free"> Gluten Free
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-4" value="Dairy Free"> Dairy Free
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-5" value="Nut Free"> Nut Free
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-6" value="Vegan"> Vegan
+            <input type="checkbox" class="category-filter ms-1" value="Vegetarian"> Vegetarian<br>
+            <input type="checkbox" class="category-filter ms-1" value="High-Protein"> High-Protein<br>
+            <input type="checkbox" class="category-filter ms-1" value="Gluten Free"> Gluten Free<br>
+            <input type="checkbox" class="category-filter ms-1" value="Dairy Free"> Dairy Free<br>
+            <input type="checkbox" class="category-filter ms-1" value="Nut Free"> Nut Free<br>
+            <input type="checkbox" class="category-filter ms-1" value="Vegan"> Vegan
+          </div>
                     </div>
-                    <br>
+  
+        <div class="mb-4">
                     <h6>Seasons</h6>
-                    <!-- Category checkboxes -->
                     <div>
-                        <input type="checkbox" class="category-filter ms-1" id="category-1" value="All"> All
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-2" value="Summer"> Summer
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-3" value="Autumn"> Autumn
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-4" value="Winter"> Winter
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-5" value="Spring"> Spring
+            <input type="checkbox" class="category-filter ms-1" value="All"> All<br>
+            <input type="checkbox" class="category-filter ms-1" value="Summer"> Summer<br>
+            <input type="checkbox" class="category-filter ms-1" value="Autumn"> Autumn<br>
+            <input type="checkbox" class="category-filter ms-1" value="Winter"> Winter<br>
+            <input type="checkbox" class="category-filter ms-1" value="Spring"> Spring
+          </div>
                     </div>
-                    <br>
+  
+        <div class="mb-4">
                     <h6>Cuisine</h6>
-                    <!-- Category checkboxes -->
                     <div>
-                        <input type="checkbox" class="category-filter ms-1" id="category-1" value="American"> American
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-2" value="Asian"> Asian
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-3" value="British"> British
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-4" value="Cuban"> Cuban
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-5" value="French"> French
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-6" value="Indian"> Indian
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-7" value="Italian"> Italian
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-8" value="Mediterranean"> Mediterranean
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-9" value="Mexican"> Mexican
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-10" value="Middle Eastern"> Middle Eastern
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-11" value="Thai"> Thai
+            <input type="checkbox" class="category-filter ms-1" value="American"> American<br>
+            <input type="checkbox" class="category-filter ms-1" value="Asian"> Asian<br>
+            <input type="checkbox" class="category-filter ms-1" value="British"> British<br>
+            <input type="checkbox" class="category-filter ms-1" value="Cuban"> Cuban<br>
+            <input type="checkbox" class="category-filter ms-1" value="French"> French<br>
+            <input type="checkbox" class="category-filter ms-1" value="Indian"> Indian<br>
+            <input type="checkbox" class="category-filter ms-1" value="Italian"> Italian<br>
+            <input type="checkbox" class="category-filter ms-1" value="Mediterranean"> Mediterranean<br>
+            <input type="checkbox" class="category-filter ms-1" value="Mexican"> Mexican<br>
+            <input type="checkbox" class="category-filter ms-1" value="Middle Eastern"> Middle Eastern<br>
+            <input type="checkbox" class="category-filter ms-1" value="Thai"> Thai
+          </div>
                     </div>
-                    <br>
+  
+        <div class="mb-4">
                     <h6>Length</h6>
-                    <!-- Category checkboxes -->
                     <div>
-                        <input type="checkbox" class="category-filter ms-1" id="category-1" value="Short"> Short 5 min - 10 min
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-2" value="Standard"> Standard 15 min - 25 min
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-3" value="Long"> Long 30 min - 1 hour
+            <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
+            <input type="checkbox" class="category-filter ms-1" value="Standard"> Standard 15–25 min<br>
+            <input type="checkbox" class="category-filter ms-1" value="Long"> Long 30–60 min
+          </div>
                     </div>
-                    <br>
+  
+        <div>
                     <h6>Difficulty</h6>
-                    <!-- Category checkboxes -->
                     <div>
-                        <input type="checkbox" class="category-filter ms-1" id="category-1" value="Easy"> Easy
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-2" value="Moderate"> Moderate
-                        <br>
-                        <input type="checkbox" class="category-filter ms-1" id="category-3" value="Hard"> Hard
+            <input type="checkbox" class="category-filter ms-1" value="Easy"> Easy<br>
+            <input type="checkbox" class="category-filter ms-1" value="Moderate"> Moderate<br>
+            <input type="checkbox" class="category-filter ms-1" value="Hard"> Hard
+          </div>
+        </div>
                     </div>
-                    <br>
-                </p>
             </div>
         </div>
 
@@ -144,33 +130,32 @@
 </html>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
     const selectedCategories = new Set(); // For storing selected categories
     const categoryFilters = document.querySelectorAll('.category-filter');
     const favoritesContainer = document.getElementById('favorites-container');
+      const searchInput = document.getElementById('search-input');
 
-    // Filter favorites based on selected categories
     function filterFavorites() {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-  // Get selected categories from the filter
-  const selectedCategories = new Set();
+          const query = searchInput ? searchInput.value.toLowerCase() : '';
+  
+          selectedCategories.clear(); // Clear previously selected categories
   document.querySelectorAll('.category-filter:checked').forEach(filter => {
     selectedCategories.add(filter.value);
   });
 
-  // Loop through all favorites and display or hide based on category matching
   favorites.forEach(favorite => {
     const cardCategories = favorite.categories ? favorite.categories.split(',') : [];
+              const title = favorite.title.toLowerCase();
     
-    // Check if any category matches the selected categories
+              const matchesSearch = query === '' || title.includes(query);
     const matchesCategory = selectedCategories.size === 0 || cardCategories.some(category => selectedCategories.has(category.trim()));
 
-    // Find the card element for this favorite and show/hide based on category filter
     const cardElement = document.getElementById(favorite.id);
     if (cardElement) {
-      if (matchesCategory) {
+                  if (matchesSearch && matchesCategory) {
         cardElement.style.display = '';  // Show card
       } else {
         cardElement.style.display = 'none';  // Hide card
@@ -179,21 +164,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 }
 
-    // Event listener for category filters (check/uncheck category boxes)
+      // Attach event listeners to category filters
     categoryFilters.forEach(filter => {
         filter.addEventListener('change', function () {
-            // Update selected categories based on checked boxes
-            if (this.checked) {
-                selectedCategories.add(this.value); // Add selected category
-            } else {
-                selectedCategories.delete(this.value); // Remove unselected category
-            }
-            filterFavorites(); // Apply the new category filter immediately
+              filterFavorites();
         });
     });
 
-    // Initial filtering when the page is loaded
+      // Attach event listener to search input
+      if (searchInput) {
+          searchInput.addEventListener('input', function () {
     filterFavorites();
 });
+      }
 
+      // Initial filtering when the page loads
+      filterFavorites();
+  });
 </script>

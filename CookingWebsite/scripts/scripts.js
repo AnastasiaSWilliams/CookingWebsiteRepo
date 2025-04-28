@@ -6,33 +6,97 @@ function getCurrentSeason() {
   return "Winter";
 }
 
-function showSeasonalPicks() {
-  const season = getCurrentSeason();
-  const allCards = document.querySelectorAll("#main-card-grid a.btn.btn-primary");
-  const seasonalContainer = document.getElementById("seasonal-container");
+function createRecipeCard(recipe) {
+  const a = document.createElement('a');
+  a.className = 'btn btn-primary';
+  a.href = `genericFood.html?id=${recipe.id}`;
 
-  if (!seasonalContainer) {
-      console.warn("Seasonal container not found on the page.");
-      return;
-  }
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.setAttribute('categories', [
+    recipe.season,
+    recipe.cuisine,
+    recipe.difficulty,
+    ...(recipe.dietary || [])
+  ].join(','));
+  card.id = `card${recipe.id}`;
 
-  allCards.forEach(link => {
-    const card = link.querySelector(".card");
-    if (!card) return;
+  card.innerHTML = `
+    <img src="images/${recipe.images[0]}" class="card-img-top img-fluid" alt="${recipe.name}">
+    <div class="card-body">
+      <h5 class="card-title">${recipe.name}</h5>
+      <p class="card-text">${recipe.description}</p>
+    </div>
+  `;
 
-    const categories = card.getAttribute("categories") || "";
-    const cardCategories = categories.split(',').map(c => c.trim());
-
-    if (cardCategories.includes(season)) {
-        const clone = link.cloneNode(true); // clone the full link wrapper
-        seasonalContainer.appendChild(clone);
-    }
-});
+  a.appendChild(card);
+  return a;
 }
 
-// Run the seasonal display logic after the DOM is fully loaded
+function populateHomePage(recipes) {
+  if (!recipes.length) return;
+
+  const mainGrid = document.getElementById('main-card-grid');
+  const seasonalContainer = document.getElementById('seasonal-container');
+  const recipeOfDaySection = document.querySelector('#recipe-of-day');
+
+  // Pick a random recipe
+  const randomRecipe = recipes[Math.floor(Math.random() * recipes.length)];
+
+  if (recipeOfDaySection) {
+    recipeOfDaySection.innerHTML = `
+      <a href="genericFood.html?id=${randomRecipe.id}" class="btn btn-primary">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-12 col-md-4">
+              <img src="images/${randomRecipe.images[0]}" class="img-fluid rounded-start" alt="${randomRecipe.name}">
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${randomRecipe.name}</h5>
+                <p class="card-text">${randomRecipe.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  // Clear existing cards
+  mainGrid.innerHTML = '';
+
+  // Fill main grid
+  recipes.forEach(recipe => {
+    const cardElement = createRecipeCard(recipe);
+    mainGrid.appendChild(cardElement);
+  });
+
+  // Fill seasonal section
+  const season = getCurrentSeason();
+  recipes.forEach(recipe => {
+    const categories = [
+      recipe.season,
+      recipe.cuisine,
+      recipe.difficulty,
+      ...(recipe.dietary || [])
+    ];
+
+    if (categories.includes(season)) {
+      const seasonalCard = createRecipeCard(recipe);
+      seasonalContainer.appendChild(seasonalCard);
+    }
+  });
+}
+
+// Fetch recipes and run everything
 window.addEventListener("DOMContentLoaded", () => {
-  showSeasonalPicks();
+  fetch('recipe.json')
+    .then(response => response.json())
+    .then(data => {
+      populateHomePage(data);
+    })
+    .catch(error => console.error('Error loading recipe data:', error));
 });
 
 
