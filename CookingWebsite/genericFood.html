@@ -62,7 +62,7 @@
         </div>
         </div>
     </header>
-    <div class="contatiner">
+    <div class="container" id="recipe-container">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4"></div>
             <div class="col-12 col-sm-6 col-md-4">
@@ -100,5 +100,53 @@
     </div>
     <!--<div class="">Daniel Fisher</div>-->
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        const recipeId = params.get('id');
+    
+        if (!recipeId) {
+            console.error("No recipe ID found in URL.");
+            return;
+        }
+    
+        fetch('recipe.json')
+            .then(response => response.json())
+            .then(data => {
+                const recipe = data.find(r => r.id == recipeId);
+                if (!recipe) {
+                    console.error("Recipe not found for ID:", recipeId);
+                    return;
+                }
+    
+                const recipeContainer = document.getElementById('recipe-container');
+                recipeContainer.innerHTML = `
+                    <div class="text-center mb-4">
+                        <h2>${recipe.name}</h2>
+                        <p>${recipe.description}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Ingredients</h4>
+                            ${recipe.ingredients.map(ingredient => `
+                                <p><input type="checkbox"> ${ingredient}</p>
+                            `).join('')}
+                            <h4 class="mt-4">Cooking Instructions</h4>
+                            <ol>
+                                ${recipe.steps.map(step => `<li>${step}</li>`).join('')}
+                            </ol>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/${recipe.images[0]}" alt="${recipe.name}" class="img-fluid rounded">
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error loading recipe:', error);
+            });
+    });
+    </script>
 
 </html>

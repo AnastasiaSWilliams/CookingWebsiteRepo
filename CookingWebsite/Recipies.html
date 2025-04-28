@@ -11,9 +11,9 @@
     <link href="styles/customBootstrap.css" rel="stylesheet">
 
     <!--Scripts Imported-->
+    <script defer src="scripts/card_json_loader.js"></script>
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
-    <script defer src="scripts/card_json_loader.js"></script>
 
     <title>Recipes</title>
 </head>
@@ -133,7 +133,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Pierogi</h5> <!-- This is selected with .card-title -->
                         <p class="card-text">Learn how to make this delicious Polish food.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                         <!-- This is selected with <a> -->
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                         <h5 class="card-title">Rice</h5>
                         <p class="card-text">Learn how to make this infinitely customizable food and increase your
                             cooking skills.</p>
-                        <a href="genericFood.html" class="btn btn-primary">Go to Recipe</a>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
 
@@ -169,7 +169,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Other</h5>
                         <p class="card-text">What the food is and why it is unique</p>
-                        <a href="genericFood.html" class="btn btn-primary">Other</a><br>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Other the Sequel</h5>
                         <p class="card-text">I am unique YIPEE!</p>
-                        <a href="genericFood.html" class="btn btn-primary">Other</a><br>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                     </div>
                 </div>
             </div>

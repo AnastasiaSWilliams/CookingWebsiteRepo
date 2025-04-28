@@ -15,6 +15,20 @@
   <script defer src="scripts/search_bar.js"></script>
 </head>
 
+<style>
+  .scroll-container {
+      padding: 10px;
+      white-space: nowrap;
+      background-color: #fdf6e3; /* optional: nicer background */
+  }
+  
+  .scroll-container .card {
+      flex: 0 0 auto;
+      width: 250px;
+      margin: 10px;
+  }
+  </style>
+
 <body>
   <header>
     <div class="container">
@@ -56,64 +70,15 @@
       </div>
       <div class="col-12 col-md-6">
         <h2>Recipe of the Day</h2>
-        <a href="genericFood.html" class="btn btn-primary">
-          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-12 col-md-4">
-                <img src="images/rice.jpg" class="img-fluid rounded-start" alt="rice" />
-              </div>
-              <div class="col-12 col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Rice</h5>
-                  <p class="card-text">
-                    Learn how to make this infinitely customizable food and increase your cooking skills.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
+          <div id="recipe-of-day"></div> <!-- Dynamic recipe injection here -->
       </div>
     </div>
 
     <div class="row bg-secondary my-2" style="height: 50px;"></div>
 
     <!-- Recipe Cards Grid -->
-    <div class="row py-10" id="main-card-grid">
-      <div class="col-12 col-sm-6 col-md-4">
-        <a class="btn btn-primary" href="genericFood.html">
-          <div categories="All, American, Standard, Hard, Summer" class="card" id="card1">
-            <img alt="pierogi" class="card-img-top img-fluid" src="images/pierogi.jpg" />
-            <div class="card-body">
-              <h5 class="card-title">Pierogi</h5>
-              <p class="card-text">Learn how to make this delicious Polish food.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        <a class="btn btn-primary" href="genericFood.html">
-          <div categories="All, Indian, Short, Easy, Autumn" class="card" id="card2">
-            <img alt="rice" class="card-img-top img-fluid" src="images/rice.jpg" />
-            <div class="card-body">
-              <h5 class="card-title">Rice</h5>
-              <p class="card-text">Learn how to make this infinitely customizable food and increase your
-                cooking skills.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        <a class="btn btn-primary" href="genericFood.html">
-          <div categories="All, British, Long, Moderate, Spring" class="card" id="card3">
-            <img alt="pineapple" class="card-img-top img-fluid" src="images/pineapple.png" />
-            <div class="card-body">
-              <h5 class="card-title">Other</h5>
-              <p class="card-text">What the food is and why it is unique</p>
-            </div>
-          </div>
-        </a>
-      </div>
+    <div id="main-card-grid" class="scroll-container d-flex flex-nowrap overflow-auto">
+      <!-- Dynamic recipe cards will be inserted here -->
     </div>
 
     <!-- Seasonal Section -->
