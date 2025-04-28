@@ -48,6 +48,7 @@ function showFavorites() {
         // Create a card div for the favorite
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
+        cardDiv.classList.add('bg-light');
         cardDiv.id = favorite.id; // Set the card's ID
         cardDiv.innerHTML = `
             <img src="${favorite.image}" class="card-img-top" alt="${favorite.title}">

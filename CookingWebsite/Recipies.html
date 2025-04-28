@@ -11,13 +11,14 @@
     <link href="styles/customBootstrap.css" rel="stylesheet">
 
     <!--Scripts Imported-->
+    <script defer src="scripts/scripts.js"></script>
     <script defer src="scripts/search_bar.js"></script>
     <script defer src="scripts/favors.js"></script>
 
     <title>Recipes</title>
 </head>
 
-<body>
+<body class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -25,9 +26,9 @@
             </div>
             <!--Search Bar-->
             <div class="col">
-                <form action="Recipies.html" method="get" class="search-bar">
-                    <input type="text" id="search-input" placeholder="Search for recipes" name="query">
-                    <button type="submit">Search</button>
+                <form action="Recipies.html" method="get" class="search-bar bg-light">
+                    <input class="bg-secondary" type="text" id="search-input" placeholder="Search for recipes" name="query">
+                    <button class="bg-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -41,11 +42,12 @@
                         <a class="nav-link" href="about.html">About</a>
                         <a class="nav-link" href="Favorites.html">Favorites</a>
                     </div>
+                    <button class="btn btn-primary" id="theme-switch">Change theme</button>
                 </div>
             </nav>
         </div>
 
-        <div class="sidenav">
+        <div class="sidenav bg-secondary">
             <h6 class="ms-1">Advanced Search</h6>
             <div class="scroll-box">
                 <p>
@@ -138,7 +140,7 @@
         <!-- Cards Section -->
         <div class="mainNav">
             <div class="card-container">
-                <div class="card" id="card1" categories="Summer, American, Standard, Hard">
+                <div class="card bg-light" id="card1" categories="Summer, American, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card1')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -156,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card2" categories="Summer, Indian, Short, Easy">
+                <div class="card bg-light" id="card2" categories="Summer, Indian, Short, Easy">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card2')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -174,7 +176,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card3" categories="Spring, British, Long, Moderate">
+                <div class="card bg-light" id="card3" categories="Spring, British, Long, Moderate">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card3')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
@@ -191,7 +193,7 @@
                     </div>
                 </div>
 
-                <div class="card" id="card4" categories="Winter, Polish, Standard, Hard">
+                <div class="card bg-light" id="card4" categories="Winter, Polish, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
                     <button class="btn clear favorite-btn" onclick="addToFavorites('card4')">
                         <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />

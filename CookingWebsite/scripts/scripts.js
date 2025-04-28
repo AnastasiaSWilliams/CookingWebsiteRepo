@@ -36,16 +36,27 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Code for switching between light and dark mode
+// uses local storage to save preferences
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('theme-switch')
 
+const enableDarkMode = () => {
+  document.body.classList.add('darkmode')
+  localStorage.setItem('darkmode', 'active')
+}
 
+const disableDarkMode = () => {
+  document.body.classList.remove('darkmode')
+  localStorage.setItem('darkmode', null)
+}
 
+if(darkmode === "active") enableDarkMode()
 
-
-
-
-
-
-
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem('darkmode')
+  darkmode !== "active" ? enableDarkMode() : disableDarkMode()
+})
 
 
 
