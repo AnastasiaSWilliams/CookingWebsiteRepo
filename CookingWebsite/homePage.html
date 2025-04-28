@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cooking Website Homepage</title>
+  <title>Cooking Website Homepage</title>
 
-    <!--Styles Imported-->
-    <link href="styles/bootstrap.min.css" rel="stylesheet" />
+  <!--Styles Imported-->
+  <link href="styles/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles/customBootstrap.css" />
 
-    <!--Scripts Imported-->
-    <script defer src="scripts/scripts.js"></script>
-    <script defer src="scripts/search_bar.js"></script>
+  <!--Scripts Imported-->
+  <script defer src="scripts/scripts.js"></script>
+  <script defer src="scripts/search_bar.js"></script>
 </head>
 
 <style>
@@ -31,10 +31,10 @@
   
   <body>
     <header>
-        <div class="container">
-            <div class="row">
+      <div class="container">
+        <div class="row">
           <div class="col-12 col-sm-6 col-md-4">
-                    <h1>Home</h1>
+            <h1>Home</h1>
                 </div>
                 <!--Search Bar-->
                 <div class="col-12 col-sm-6 col-md-4">
@@ -42,7 +42,7 @@
                       <input type="text" id="search-input" placeholder="Search for recipes" name="query" />
                       <button type="submit">Search</button>
                     </form>
-                </div>
+                  </div>
             </div>
             <div class="row">
                 <!--home, recipes, about me, search, favorites-->
@@ -63,43 +63,43 @@
         <!-- Welcome & Recipe of the Day Row -->
         <div class="row">
           <div class="col-12 col-md-6">
-                <h2>Welcome!</h2>
-                <p>
-                    Welcome to the Niklewski recipes! Here you can find recipes for all your cooking needs.
-                    We hope you enjoy all the deliciousness available!
-                </p>
-            </div>
+            <h2>Welcome!</h2>
+            <p>
+              Welcome to the Niklewski recipes! Here you can find recipes for all your cooking needs.
+              We hope you enjoy all the deliciousness available!
+            </p>
+          </div>
           <div class="col-12 col-md-6">
-                <h2>Recipe of the Day</h2>
+            <h2>Recipe of the Day</h2>
               <div id="recipe-of-day"></div> <!-- Dynamic recipe injection here -->
-            </div>
+          </div>
         </div>
-
+    
         <div class="row bg-secondary my-2" style="height: 50px;"></div>
     
         <!-- Recipe Cards Grid -->
         <div id="main-card-grid" class="scroll-container d-flex flex-nowrap overflow-auto">
           <!-- Dynamic recipe cards will be inserted here -->
         </div>
-
+    
         <!-- Seasonal Section -->
         <h2 class="row bg-secondary my-2" style="height: 50px;">Seasonal Picks</h2>
         <div class="card-container" id="seasonal-container">
-            <!--Seasonal Stuff go here!-->
+          <!--Seasonal Stuff go here!-->
         </div>
-
+    
         <div class="row bg-secondary my-2" style="height: 50px;"></div>
         <div class="row text-center">
-            <h2>Submit your own recipe!</h2>
-            <a class="btn btn-primary" href="recipeSubmissionForm.html" type="button">Go to submission form</a>
+          <h2>Submit your own recipe!</h2>
+          <a class="btn btn-primary" href="recipeSubmissionForm.html" type="button">Go to submission form</a>
         </div>
         <br />
+      </div>
+  <footer>
+    <div class="row bg-secondary my-2" style="height: 50px;">
+      <p>Niklewski Recipes</p>
     </div>
-    <footer>
-        <div class="row bg-secondary my-2" style="height: 50px;">
-            <p>Niklewski Recipes</p>
-        </div>
-    </footer>
+  </footer>
 </body>
 
 </html>
