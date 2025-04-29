@@ -1,6 +1,7 @@
 :root {
     --bs-primary: #dca01a;
     --bs-secondary: #f7d9ab;
+    --bs-tertiary: #4e3b2f;
     --bs-dark: #4e3b2f;
     --bs-light: #fcfbf9;
     --bs-success: #064561;
@@ -9,8 +10,17 @@
   .darkmode {
     --bs-primary: #8e6713;
     --bs-secondary: #a38a65;
+    --bs-tertiary: #47362b;
     --bs-dark: #a09c99;
     --bs-light: #3e352b;
+    --bs-success: #064561;
+  }
+  .seizuremode {
+    --bs-primary: #fe03bf;
+    --bs-secondary: #62ff00;
+    --bs-tertiary: #fdcd31;
+    --bs-dark: #f90d05;
+    --bs-light: #3700fe;
     --bs-success: #064561;
   }
 
@@ -32,12 +42,18 @@
 .bg-dark {
     background-color: var(--bs-dark) !important;
 }
+.bg-body-tertiary {
+    color: var(--bs-tertiary) !important;
+}
 
 
 body {
     color: var(--bs-dark);
 }
 
+.nav-link {
+    color: var(--bs-tertiary);
+}
 /*stuff for the recipe submission form*/
 input {
     background-color: var(--bs-light);
@@ -60,6 +76,7 @@ textarea {
 
 button {
     transition: transform 0.2s ease;
+    color: var(--bs-tertiary);
 }
 
 button:hover {
@@ -109,7 +126,7 @@ a:hover {
         border-color: var(--bs-light);
         padding: 24px 20px;
         font-size: 20px;
-        color: #000000
+        color: var(--bs-tertiary);
     }
 
 .user-cards {

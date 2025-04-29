@@ -122,6 +122,24 @@ themeSwitch.addEventListener("click", () => {
   darkmode !== "active" ? enableDarkMode() : disableDarkMode()
 })
 
+//seizure mode
+const seizureSwitch = document.getElementById('seizure')
+let checkSeizure = false
+
+const enableSeizureMode = () => {
+  document.body.classList.add('seizuremode')
+  localStorage.setItem('darkmode', 'active')
+}
+seizureSwitch.addEventListener("click", () => {
+  if (checkSeizure == false){
+    document.body.classList.add('seizuremode')
+    checkSeizure = true;
+  }
+  else {
+    document.body.classList.remove('seizuremode')
+    checkSeizure = false;
+  }
+})
 
 
 /*    //Reason to believe old data but keeping it in case
