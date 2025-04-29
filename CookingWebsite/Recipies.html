@@ -2,21 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Styles Imported-->
-    <link href="styles/recipies.CSS" rel="stylesheet" />
-    <link href="styles/bootstrap.min.css" rel="stylesheet" />
-    <link href="styles/customBootstrap.css" rel="stylesheet">
+  <!-- Styles Imported -->
+  <link href="styles/recipies.CSS" rel="stylesheet" />
+  <link href="styles/bootstrap.min.css" rel="stylesheet" />
+  <link href="styles/customBootstrap.css" rel="stylesheet">
 
-    <!--Scripts Imported-->
-    <script defer src="scripts/scripts.js"></script>
-    <script defer src="scripts/card_json_loader.js"></script>
-    <script defer src="scripts/search_bar.js"></script>
-    <script defer src="scripts/favors.js"></script>
-
-    <title>Recipes</title>
+  <!-- Scripts Imported -->
+  <script defer src="scripts/search_bar.js"></script>
+  <script defer src="scripts/card_json_loader.js"></script>
+  <script defer src="scripts/favors.js"></script>
+  
+  <title>Recipes</title>
 </head>
 
 <body class="bg-light">
@@ -50,8 +49,9 @@
                 </div>
             </nav>
         </div>
+    </div>
 
-        <button class="btn btn-secondary d-lg-none" id="filter-toggle-btn">Filter</button>
+    <button class="btn btn-secondary d-lg-none" id="filter-toggle-btn">Filter</button>
 
         <div class="sidenav filter-sidebar bg-secondary">
             <div class="card p-3 shadow-sm">
@@ -140,8 +140,8 @@
                         <p class="card-text">Learn how to make this delicious Polish food.</p>
                         <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
                         <!-- This is selected with <a> -->
-                    </div>
-                </div>
+            </div>
+          </div>
 
                 <div class="card bg-light" id="card2" category-filter ms-1="Summer, Indian, Short, Easy">
                     <!-- ⭐ Favorite Button -->
@@ -158,8 +158,8 @@
                         <p class="card-text">Learn how to make this infinitely customizable food and increase your
                             cooking skills.</p>
                         <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
+            </div>
+          </div>
 
                 <div class="card bg-light" id="card3" category-filter ms-1="Spring, British, Long, Moderate">
                     <!-- ⭐ Favorite Button -->
@@ -175,8 +175,8 @@
                         <h5 class="card-title">Other</h5>
                         <p class="card-text">What the food is and why it is unique</p>
                         <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
+            </div>
+          </div>
 
                 <div class="card bg-light" id="card4" category-filter ms-1="Winter, Polish, Standard, Hard">
                     <!-- ⭐ Favorite Button -->
@@ -192,10 +192,10 @@
                         <h5 class="card-title">Other the Sequel</h5>
                         <p class="card-text">I am unique YIPEE!</p>
                         <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
 </body>
 
