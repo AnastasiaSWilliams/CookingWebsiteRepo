@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ].join(',');
 
         card.classList.add('card');
+        card.classList.add('bg-light');
         card.id = `card${recipe.id}`;
         card.setAttribute('categories', categories);
 

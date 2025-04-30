@@ -12,7 +12,7 @@ function createRecipeCard(recipe) {
   a.href = `genericFood.html?id=${recipe.id}`;
 
   const card = document.createElement('div');
-  card.className = 'card';
+  card.className = 'card bg-light';
   card.setAttribute('categories', [
     recipe.season,
     recipe.cuisine,
@@ -46,7 +46,7 @@ function populateHomePage(recipes) {
   if (recipeOfDaySection) {
     recipeOfDaySection.innerHTML = `
       <a href="genericFood.html?id=${randomRecipe.id}" class="btn btn-primary">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card bg-light mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-12 col-md-4">
               <img src="images/${randomRecipe.images[0]}" class="img-fluid rounded-start" alt="${randomRecipe.name}">

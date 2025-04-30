@@ -34,6 +34,7 @@ function showFavorites() {
     favorites.forEach(favorite => {
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
+        cardDiv.classList.add('bg-light');
         cardDiv.id = favorite.id;
 
         cardDiv.innerHTML = `

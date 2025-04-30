@@ -42,8 +42,14 @@
 
 /* Desktop-specific layout */
 @media (min-width: 992px) {
+    #box {
+        width: 225px;
+        border: none;
+        color: var(--bs-tertiary);
+        box-shadow: none;
+    }
     .sidenav {
-        width: 175px;
+        width: 250px;
         position: fixed;
         top: 130px;
         left: 10px;

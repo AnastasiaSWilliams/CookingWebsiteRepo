@@ -53,87 +53,150 @@
 
     <button class="btn btn-secondary d-lg-none" id="filter-toggle-btn">Filter</button>
 
-    <div class="sidenav filter-sidebar">
-      <div class="card p-3 shadow-sm">
-        <h5 class="mb-3">🔍 Advanced Search</h5>
-        <div class="scroll-box">
-          <!-- Dietary Filters -->
-          <div class="mb-4">
-            <h6>Dietary</h6>
-            <div>
-              <input type="checkbox" class="category-filter ms-1" value="Vegetarian"> Vegetarian<br>
-              <input type="checkbox" class="category-filter ms-1" value="High-Protein"> High-Protein<br>
-              <input type="checkbox" class="category-filter ms-1" value="Gluten Free"> Gluten Free<br>
-              <input type="checkbox" class="category-filter ms-1" value="Dairy Free"> Dairy Free<br>
-              <input type="checkbox" class="category-filter ms-1" value="Nut Free"> Nut Free<br>
-              <input type="checkbox" class="category-filter ms-1" value="Vegan"> Vegan
+        <div class="sidenav filter-sidebar bg-secondary">
+            <div id="box" class="card p-3 bg-secondary">
+              <h5 class="mb-3">🔍 Advanced Search</h5>
+          
+              <div class="scroll-box">
+          
+                <div class="mb-4">
+                  <br>
+                  <h6>Dietary</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Vegetarian"> Vegetarian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="High-Protein"> High-Protein<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Gluten Free"> Gluten Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Dairy Free"> Dairy Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Nut Free"> Nut Free<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Vegan"> Vegan
+                  </div>
+                </div>
+          
+                <div class="mb-4">
+                  <h6>Seasons</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="All"> All<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Summer"> Summer<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Autumn"> Autumn<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Winter"> Winter<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Spring"> Spring
+                  </div>
+                </div>
+          
+                <div class="mb-4">
+                  <h6>Cuisine</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="American"> American<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Asian"> Asian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="British"> British<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Cuban"> Cuban<br>
+                    <input type="checkbox" class="category-filter ms-1" value="French"> French<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Indian"> Indian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Italian"> Italian<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Mediterranean"> Mediterranean<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Mexican"> Mexican<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Middle Eastern"> Middle Eastern<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Thai"> Thai
+                  </div>
+                </div>
+          
+                <div class="mb-4">
+                  <h6>Length</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Standard">Standard 15–25 min<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Long">Long 30–60 min
+                  </div>
+                </div>
+          
+                <div>
+                  <h6>Difficulty</h6>
+                  <div>
+                    <input type="checkbox" class="category-filter ms-1" value="Easy"> Easy<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Moderate"> Moderate<br>
+                    <input type="checkbox" class="category-filter ms-1" value="Hard"> Hard
+                  </div>
+                </div>
+          
+              </div>
             </div>
           </div>
 
-          <!-- Seasons Filters -->
-          <div class="mb-4">
-            <h6>Seasons</h6>
-            <div>
-              <input type="checkbox" class="category-filter ms-1" value="All"> All<br>
-              <input type="checkbox" class="category-filter ms-1" value="Summer"> Summer<br>
-              <input type="checkbox" class="category-filter ms-1" value="Autumn"> Autumn<br>
-              <input type="checkbox" class="category-filter ms-1" value="Winter"> Winter<br>
-              <input type="checkbox" class="category-filter ms-1" value="Spring"> Spring
+        <!-- Cards Section -->
+        <div class="mainNav">
+            <div class="card-container">
+                <div class="card bg-light" id="card1" category-filter ms-1="Summer, American, Standard, Hard">
+                    <!-- ⭐ Favorite Button -->
+                    <button class="btn clear favorite-btn" onclick="addToFavorites('card1')">
+                        <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
+                    </button>
+
+                    <!-- Card Image -->
+                    <img src="images/pierogi.jpg" class="card-img-top img-fluid" alt="pierogi" />
+
+                    <!-- Card Content -->
+                    <div class="card-body">
+                        <h5 class="card-title">Pierogi</h5> <!-- This is selected with .card-title -->
+                        <p class="card-text">Learn how to make this delicious Polish food.</p>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
+                        <!-- This is selected with <a> -->
             </div>
           </div>
 
-          <!-- Cuisine Filters -->
-          <div class="mb-4">
-            <h6>Cuisine</h6>
-            <div>
-              <input type="checkbox" class="category-filter ms-1" value="American"> American<br>
-              <input type="checkbox" class="category-filter ms-1" value="Asian"> Asian<br>
-              <input type="checkbox" class="category-filter ms-1" value="British"> British<br>
-              <input type="checkbox" class="category-filter ms-1" value="Cuban"> Cuban<br>
-              <input type="checkbox" class="category-filter ms-1" value="French"> French<br>
-              <input type="checkbox" class="category-filter ms-1" value="Indian"> Indian<br>
-              <input type="checkbox" class="category-filter ms-1" value="Italian"> Italian<br>
-              <input type="checkbox" class="category-filter ms-1" value="Mediterranean"> Mediterranean<br>
-              <input type="checkbox" class="category-filter ms-1" value="Mexican"> Mexican<br>
-              <input type="checkbox" class="category-filter ms-1" value="Middle Eastern"> Middle Eastern<br>
-              <input type="checkbox" class="category-filter ms-1" value="Thai"> Thai
+                <div class="card bg-light" id="card2" category-filter ms-1="Summer, Indian, Short, Easy">
+                    <!-- ⭐ Favorite Button -->
+                    <button class="btn clear favorite-btn" onclick="addToFavorites('card2')">
+                        <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
+                    </button>
+
+                    <!-- Card Image -->
+                    <img src="images/rice.jpg" class="card-img-top img-fluid" alt="rice">
+
+                    <!-- Card Content -->
+                    <div class="card-body">
+                        <h5 class="card-title">Rice</h5>
+                        <p class="card-text">Learn how to make this infinitely customizable food and increase your
+                            cooking skills.</p>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
             </div>
           </div>
 
-          <!-- Length Filters -->
-          <div class="mb-4">
-            <h6>Length</h6>
-            <div>
-              <input type="checkbox" class="category-filter ms-1" value="Short"> Short 5–10 min<br>
-              <input type="checkbox" class="category-filter ms-1" value="Standard">Standard 15–25 min<br>
-              <input type="checkbox" class="category-filter ms-1" value="Long">Long 30–60 min
+                <div class="card bg-light" id="card3" category-filter ms-1="Spring, British, Long, Moderate">
+                    <!-- ⭐ Favorite Button -->
+                    <button class="btn clear favorite-btn" onclick="addToFavorites('card3')">
+                        <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
+                    </button>
+
+                    <!-- Card Image -->
+                    <img src="images/pineapple.png" class="card-img-top img-fluid" alt="pineapple">
+
+                    <!-- Card Content -->
+                    <div class="card-body">
+                        <h5 class="card-title">Other</h5>
+                        <p class="card-text">What the food is and why it is unique</p>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
             </div>
           </div>
 
-          <!-- Difficulty Filters -->
-          <div>
-            <h6>Difficulty</h6>
-            <div>
-              <input type="checkbox" class="category-filter ms-1" value="Easy"> Easy<br>
-              <input type="checkbox" class="category-filter ms-1" value="Moderate"> Moderate<br>
-              <input type="checkbox" class="category-filter ms-1" value="Hard"> Hard
-            </div>
+                <div class="card bg-light" id="card4" category-filter ms-1="Winter, Polish, Standard, Hard">
+                    <!-- ⭐ Favorite Button -->
+                    <button class="btn clear favorite-btn" onclick="addToFavorites('card4')">
+                        <img id="favorButton" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
+                    </button>
+
+                    <!-- Card Image -->
+                    <img src="images/easter_egg.webp" class="card-img-top img-fluid" alt="pineapple">
+
+                    <!-- Card Content -->
+                    <div class="card-body">
+                        <h5 class="card-title">Other the Sequel</h5>
+                        <p class="card-text">I am unique YIPEE!</p>
+                        <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Cards Section -->
-    <div class="mainNav">
-      <div class="card-container">
-        <!-- Dynamic cards will be injected here by card_json_loader.js -->
-      </div>
-    </div>
-
-    <!-- Pagination Section -->
-    <div id="pagination-controls" class="pagination-controls"></div>
-
-  </div>
 </body>
 
 </html>
