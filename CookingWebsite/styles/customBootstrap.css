@@ -49,6 +49,13 @@
 
 body {
     color: var(--bs-dark);
+    font-size: large;
+}
+h1 {
+    font-family: Didot;
+}
+h2 {
+    font-family: Didot;
 }
 
 .nav-link {
