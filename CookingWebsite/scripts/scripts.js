@@ -22,11 +22,11 @@ function createRecipeCard(recipe) {
   card.id = `card${recipe.id}`;
 
   card.innerHTML = `
-    <img src="images/${recipe.images[0]}" class="card-img-top img-fluid" alt="${recipe.name}">
-    <div class="card-body">
-      <h5 class="card-title">${recipe.name}</h5>
-      <p class="card-text">${recipe.description}</p>
-    </div>
+  <img src="images/${recipe.images[0]}" class="card-img-top img-fluid" alt="${recipe.name}">
+  <div class="card-body">
+    <h5 class="card-title">${recipe.name}</h5>
+    <p class="card-text">${truncateStory(recipe.story)}</p>
+  </div>
   `;
 
   a.appendChild(card);
@@ -54,7 +54,7 @@ function populateHomePage(recipes) {
             <div class="col-12 col-md-8">
               <div class="card-body">
                 <h5 class="card-title">${randomRecipe.name}</h5>
-                <p class="card-text">${randomRecipe.description}</p>
+                <p class="card-text">${truncateStory(randomRecipe.story)}</p>
               </div>
             </div>
           </div>
@@ -141,37 +141,9 @@ seizureSwitch.addEventListener("click", () => {
   }
 })
 
-
-/*    //Reason to believe old data but keeping it in case
-document.addEventListener('DOMContentLoaded', function () { //Ensures the Javascript runs when the HTML page is fully loaded and not before, name of the event being listened to is 'DOMContentLoaded'
-
-  const urlParams = new URLSearchParams(window.location.search); //creates an object called urlParams that is aimed at taking the string user types and puts it in the query
-  const query = urlParams.get('query'); //where the query string is stored
-  
-  if (query) { //checks for query
-
-    const searchInput = document.getElementById('search-input'); //sets the value of the query to searchinput by an id, prefilling the search box so the user knows what they typed
-    searchInput.value = query; // Optionally, show the query in the search input field
-    
-    const cards = document.querySelectorAll('.card'); // Assuming all recipe cards have the class 'card', looks for all the elements in the card class
-
-    // Function to filter cards based on search query
-    function filterCards(query) {
-      const queryLower = query.toLowerCase(); // Convert to lowercase for case-insensitive matching
-
-      cards.forEach(card => {
-        const recipeName = card.querySelector('h5').textContent.toLowerCase(); // Now we looked through all the cards we look for their h5 tags and match the strings with the one user typed
-
-        if (recipeName.includes(queryLower)) { //This is the checker, checking to see if whether the string user typed matched anything with the card classes
-          card.style.display = '';  // Show card if the recipe name matches the query
-        } else {
-          card.style.display = 'none';  // Hide card if it doesn't match
-        }
-      });
-    }
-
-    // Filter the cards if there's a query in the URL
-    filterCards(query);
-  }
-});
-*/
+function truncateStory(fullStory, maxLength = 80) {
+  if (!fullStory) return '';
+  return fullStory.length > maxLength 
+      ? fullStory.slice(0, maxLength).trim() + '...'
+      : fullStory;
+}
