@@ -43,7 +43,9 @@ function showFavorites() {
                 <h5 class="card-title">${favorite.title}</h5>
                 <p class="card-text">${truncateStory(favorite.story)}</p>
                 <a href="${favorite.link}" class="btn btn-primary">Go to Recipe</a>
-                <button class="btn btn-danger" onclick="removeFromFavorites('${favorite.id}')">Remove from Favorites</button>
+                <button class="btn clear favorite-btn" onclick="removeFromFavorites('${favorite.id}')">
+                <img id="favorButton" src="images/smiley_star.svg" width="50" height="50" alt="Favorite Star" />
+                </button>
             </div>
         `;
 

@@ -93,14 +93,13 @@ button:hover {
     color: var(--bs-light);
 }
 
-
 .clear {
     background: transparent !important;
     border: none !important;
     padding: 0;
     box-shadow: none;
     position: absolute;
-    top: 10px;
+    bottom: 10px;  /* changed from top to bottom */
     right: 10px;
     z-index: 2;
     transition: transform 0.2s ease;
