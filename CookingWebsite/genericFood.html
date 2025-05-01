@@ -80,6 +80,12 @@
         </div>
     </div>
     <!--<div class="">Daniel Fisher</div>-->
+    <footer>
+        <div class="row bg-secondary my-2" style="height: 50px;">
+          <p>Niklewski Recipes</p>
+          <a href="https://github.com" target="_blank" class="btn btn-primary">GitHub Page</a>
+        </div>
+    </footer>
 </body>
 
 <script>
@@ -92,10 +98,13 @@
         return;
     }
 
+    // Fetch both default recipes (from JSON) and user-submitted recipes (from localStorage)
     fetch('recipe.json')
         .then(response => response.json())
         .then(data => {
-            const recipe = data.find(r => r.id == recipeId);
+            const userRecipes = JSON.parse(localStorage.getItem('userRecipes')) || [];
+            const allRecipes = [...data, ...userRecipes]; // Combine both
+            const recipe = allRecipes.find(r => r.id == recipeId);
             if (!recipe) {
                 console.error("Recipe not found for ID:", recipeId);
                 return;
@@ -119,15 +128,36 @@
                         </ol>
                     </div>
                     <div class="col-md-6">
-                        <img src="images/${recipe.images[0]}" alt="${recipe.name}" class="img-fluid rounded">
+                        <img src="${recipe.images[0].startsWith('data:') ? recipe.images[0] : 'images/' + recipe.images[0]}" alt="${recipe.name}" class="img-fluid rounded">
                     </div>
                 </div>
             `;
+
+            // Add Delete Button if it's a user-created recipe
+            if (recipe.userCreated) {
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Delete Recipe";
+                deleteBtn.className = "btn btn-danger mt-2";
+                deleteBtn.onclick = () => {
+                    deleteUserRecipe(recipe.id);
+                };
+                recipeContainer.appendChild(deleteBtn);
+            }
         })
         .catch(error => {
             console.error('Error loading recipe:', error);
         });
 });
+
+// Delete user-created recipe function
+function deleteUserRecipe(recipeId) {
+    const userRecipes = JSON.parse(localStorage.getItem("userRecipes")) || [];
+    const updatedRecipes = userRecipes.filter(r => r.id !== recipeId);
+    localStorage.setItem("userRecipes", JSON.stringify(updatedRecipes));
+    alert('Recipe deleted successfully!');
+    window.location.href = "Recipies.html";
+    localStorage.setItem("reloadNeeded", "true");  // Flag reload
+}
     </script>
 
 </html>

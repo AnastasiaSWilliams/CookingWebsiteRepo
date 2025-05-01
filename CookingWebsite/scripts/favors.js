@@ -67,63 +67,47 @@ function removeFromFavorites(cardId) {
     syncFavoritesUI();
 }
 
-// Add or toggle a card in favorites
-function addToFavorites(cardId) {
-    const card = document.getElementById(cardId);
-    if (!card) return;
-
-    const cardTitle = card.querySelector('.card-title')?.innerText || '';
-    const cardImage = card.querySelector('.card-img-top')?.src || '';
-    const recipeLink = card.querySelector('a')?.href || '#';
-    const cardCategories = card.getAttribute('categories') || '';
-
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const existingCardIndex = favorites.findIndex(fav => fav.id === cardId);
-
-    if (existingCardIndex === -1) {
-        favorites.push({
-            id: cardId,
-            title: cardTitle,
-            image: cardImage,
-            link: recipeLink,
-            categories: cardCategories,
-            story: card.getAttribute('data-story') || '',
-            favorited: true
-        });
-    } else {
-        favorites[existingCardIndex].favorited = !favorites[existingCardIndex].favorited;
-
-        if(!favorites[existingCardIndex].favorited) {
-            favorites.splice(existingCardIndex, 1);
-        }
-    }
-
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    syncFavoritesUI();
-}
-
-// Sync the star icons based on favorites
 function syncFavoritesUI() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    const favoriteIds = {};
-    favorites.forEach(fav => {
-        favoriteIds[fav.id] = fav.favorited;
-    });
-
     document.querySelectorAll('.card').forEach(card => {
         const cardId = card.id;
-        const starBtn = document.querySelector(`#favorButton${cardId.replace('card', '')}`);
-
-        if (!starBtn) return;
-
-        if (favoriteIds[cardId]) {
-            starBtn.src = "images/smiley_star.svg"; // fixed path
-        } else {
-            starBtn.src = "images/star.svg"; // fixed path
+        const starBtn = card.querySelector(`#favorButton${cardId.replace('card', '')}`);
+        const isFavorited = favorites.some(fav => fav.id === cardId);
+        if (starBtn) {
+            starBtn.src = isFavorited ? "images/smiley_star.svg" : "images/star.svg";
         }
     });
 }
+
+// Adds or removes a card from favorites
+function addToFavorites(cardId) {
+    const card = document.getElementById(cardId);
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const existingIndex = favorites.findIndex(fav => fav.id === cardId);
+    const starBtn = card.querySelector(`#favorButton${cardId.replace('card', '')}`);
+
+    if (existingIndex === -1) {
+        // Add to favorites
+        const title = card.querySelector('.card-title')?.innerText || '';
+        const image = card.querySelector('.card-img-top')?.src || '';
+        const link = card.querySelector('a')?.href || '#';
+        const categories = card.getAttribute('categories') || '';
+        favorites.push({ id: cardId, title, image, link, categories, favorited: true });
+        if (starBtn) starBtn.src = "images/smiley_star.svg";
+    } else {
+        // Toggle off
+        favorites.splice(existingIndex, 1);
+        if (starBtn) starBtn.src = "images/star.svg";
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+// Initial sync on load
+window.onload = () => {
+    syncFavoritesUI();
+};
 
 // Refilter on checkbox change
 document.querySelectorAll('.category-filter').forEach(filter => {

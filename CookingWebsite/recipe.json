@@ -2634,39 +2634,6 @@
         "story": "Stuffed Mushrooms are a dish that always brings back fond memories of family gatherings. The first time I made them was for a holiday dinner, and I was nervous about trying something new. To my delight, they were an instant hit\u2014everyone raved about the cheesy, garlicky filling, and there wasn\u2019t a single mushroom left on the tray by the end of the night. What I love most about stuffed mushrooms is their versatility. The basic recipe is already delicious, but you can customize the filling to suit your taste or the occasion. For example, you can add crumbled sausage for a heartier appetizer, or sun-dried tomatoes and spinach for a Mediterranean twist. The key to making great stuffed mushrooms is to choose mushrooms that are firm and uniform in size, so they bake evenly and look great on the platter. I always recommend preparing the filling in advance and letting it sit for a while to allow the flavors to meld together. Another tip is to bake the mushrooms on a wire rack placed over a baking sheet. This allows any excess moisture to drain away, keeping the mushrooms nice and crisp. Stuffed mushrooms are perfect for entertaining because they can be prepped ahead of time and baked just before serving. They\u2019re elegant enough for formal dinners but also work beautifully for casual gatherings or potlucks. Serve them warm, garnished with fresh parsley, and watch them disappear in minutes!"
     },
     {
-        "id": 78,
-        "name": "Caprese Skewers",
-        "category": "Appetizers",
-        "ingredients": [
-            "0.5 cup of cherry tomatoes",
-            "0.5 cup of mozzarella balls",
-            "2 tbsp of basil",
-            "2 tbsp of olive oil",
-            "2 tbsp of balsamic glaze"
-        ],
-        "dietary": [
-            "Vegetarian",
-            "Gluten-Free"
-        ],
-        "season": "All",
-        "cuisine": "Italian",
-        "prep_time": "10 min",
-        "difficulty": "Easy",
-        "images": [
-            "caprese_skewers_1.webp",
-            "caprese_skewers_2.webp",
-            "caprese_skewers_3.webp",
-            "caprese_skewers_4.webp"
-        ],
-        "steps": [
-            "On small skewers, thread a cherry tomato, a basil leaf, and a mozzarella ball.",
-            "Repeat until all ingredients are used.",
-            "Drizzle the skewers with olive oil and balsamic glaze.",
-            "Serve immediately."
-        ],
-        "story": "Caprese Skewers are one of my favorite appetizers because they combine the classic flavors of Italy with a modern, playful presentation. I first made these for a summer barbecue, and they were an instant success. Guests loved the combination of juicy cherry tomatoes, creamy mozzarella, and fragrant basil leaves, all tied together with a drizzle of balsamic glaze. What\u2019s great about Caprese Skewers is how easy they are to make\u2014they require no cooking, just a bit of assembly. Despite their simplicity, they look incredibly elegant and are perfect for any occasion, from casual picnics to upscale dinner parties. To make the best Caprese Skewers, it\u2019s essential to use the freshest ingredients you can find. Look for ripe, sweet cherry tomatoes, high-quality mozzarella, and vibrant basil leaves. A good balsamic glaze is also a must\u2014it adds a touch of sweetness and acidity that complements the other flavors beautifully. If you\u2019re preparing these ahead of time, you can assemble the skewers a few hours in advance and keep them refrigerated until serving. Just wait to drizzle the balsamic glaze until right before they\u2019re served to keep them looking fresh. Caprese Skewers are not just delicious but also a feast for the eyes. Their vibrant colors and simple elegance make them a standout appetizer that will have everyone coming back for seconds (or thirds)!"
-    },
-    {
         "id": 79,
         "name": "Deviled Eggs with Bacon",
         "category": "Appetizers",

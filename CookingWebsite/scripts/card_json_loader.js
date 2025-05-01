@@ -1,9 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ✅ Reload page if coming from a deleted recipe
+    if (localStorage.getItem("reloadNeeded") === "true") {
+        localStorage.removeItem("reloadNeeded");
+        location.reload();
+        return; // Prevent duplicate reload
+    }
+
     const CARD_CONTAINER = document.querySelector('.card-container');
     const RECIPES_PER_PAGE = 9;
     let allRecipes = [];
     let filteredRecipes = [];
     let currentPage = 1;
+
+    function truncateStory(story, maxLength = 160) {
+        if (!story) return '';
+        return story.length > maxLength ? story.substring(0, maxLength).trim() + '...' : story;
+    }
 
     function createCard(recipe) {
         const card = document.createElement('div');
@@ -15,23 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
         ].join(',');
 
         card.classList.add('card');
-        card.classList.add('bg-light');
         card.id = `card${recipe.id}`;
         card.setAttribute('categories', categories);
 
-        card.setAttribute('data-story', recipe.story || '');
+        const imageSrc = recipe.images[0]?.startsWith("data:")
+            ? recipe.images[0]
+            : "images/" + recipe.images[0];
 
         card.innerHTML = `
             <button class="btn clear favorite-btn" onclick="addToFavorites('card${recipe.id}')">
                 <img id="favorButton${recipe.id}" src="images/star.svg" width="50" height="50" alt="Favorite Star" />
             </button>
-            <img src="images/${recipe.images[0]}" class="card-img-top img-fluid" alt="${recipe.name}" />
+            <img src="${imageSrc}" class="card-img-top img-fluid" alt="${recipe.name}" />
             <div class="card-body">
                 <h5 class="card-title">${recipe.name}</h5>
                 <p class="card-text">${truncateStory(recipe.story)}</p>
                 <a href="genericFood.html?id=${recipe.id}" class="btn btn-primary">Go to Recipe</a>
             </div>
         `;
+
+        if (recipe.userCreated) {
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = "btn btn-danger mt-2";
+            deleteBtn.textContent = "Delete";
+            deleteBtn.onclick = () => {
+              deleteUserRecipe(recipe.id);
+            };
+            card.querySelector('.card-body').appendChild(deleteBtn);
+          }
+
         return card;
     }
 
@@ -40,17 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const start = (page - 1) * RECIPES_PER_PAGE;
         const end = start + RECIPES_PER_PAGE;
         const currentRecipes = filteredRecipes.slice(start, end);
-
         currentRecipes.forEach(recipe => {
             const card = createCard(recipe);
             CARD_CONTAINER.appendChild(card);
         });
-
-        if (typeof syncFavoritesUI === "function") {
-            syncFavoritesUI();
-        }
-
         renderPaginationControls();
+        syncFavoritesUI();
     }
 
     function renderPaginationControls() {
@@ -75,11 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    fetch('recipe.json')
-    .then(res => res.json())
-    .then(data => {
-        allRecipes = data;
-        filteredRecipes = data;
+    function deleteUserRecipe(recipeId) {
+        // Remove from userRecipes
+        const userRecipes = JSON.parse(localStorage.getItem('userRecipes')) || [];
+        const updated = userRecipes.filter(r => r.id !== recipeId);
+        localStorage.setItem('userRecipes', JSON.stringify(updated));
+    
+        // Remove from favorites as well
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const newFavorites = favorites.filter(fav => fav.id !== `card${recipeId}`);
+        localStorage.setItem('favorites', JSON.stringify(newFavorites));
+    
+        // Remove from in-memory recipes
+        allRecipes = allRecipes.filter(r => r.id !== recipeId);
+        filteredRecipes = filteredRecipes.filter(r => r.id !== recipeId);
+    
+        displayPage(currentPage);
+    }
+
+    Promise.all([
+        fetch('recipe.json').then(res => res.json()),
+        Promise.resolve(JSON.parse(localStorage.getItem('userRecipes')) || [])
+    ])
+    .then(([staticRecipes, userRecipes]) => {
+        allRecipes = [...staticRecipes, ...userRecipes];
+        filteredRecipes = allRecipes;
         displayPage(currentPage);
 
         window.allRecipes = allRecipes;
@@ -96,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Failed to load recipes:', err));
 });
+
 
 function truncateStory(fullStory, maxLength = 160) {
     if (!fullStory) return '';
