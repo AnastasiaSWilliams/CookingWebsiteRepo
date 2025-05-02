@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createCard(recipe) {
         const card = document.createElement('div');
+        card.className = 'card bg-light';
         const categories = [
             recipe.season,
             recipe.cuisine,

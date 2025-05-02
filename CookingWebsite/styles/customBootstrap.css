@@ -1,3 +1,4 @@
+
 :root {
     --bs-primary: #dca01a;
     --bs-secondary: #f7d9ab;
@@ -50,16 +51,23 @@
 body {
     color: var(--bs-dark);
     font-size: large;
+    font-family: 'Open Sans', sans-serif;
 }
 h1 {
     font-family: Didot;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 h2 {
     font-family: Didot;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .nav-link {
     color: var(--bs-tertiary);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 /*stuff for the recipe submission form*/
 input {
